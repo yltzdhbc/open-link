@@ -2,14 +2,11 @@
     \file    gd32f4xx_ctc.c
     \brief   CTC driver
 
-    \version 2016-08-15, V1.0.0, firmware for GD32F4xx
-    \version 2018-12-12, V2.0.0, firmware for GD32F4xx
-    \version 2020-09-30, V2.1.0, firmware for GD32F4xx
-    \version 2022-03-09, V3.0.0, firmware for GD32F4xx
+    \version 2023-06-25, V3.1.0, firmware for GD32F4xx
 */
 
 /*
-    Copyright (c) 2022, GigaDevice Semiconductor Inc.
+    Copyright (c) 2023, GigaDevice Semiconductor Inc.
 
     Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -137,26 +134,11 @@ void ctc_refsource_polarity_config(uint32_t polarity)
 }
 
 /*!
-    \brief    select USBFS or USBHS SOF signal
-    \param[in]  usbsof:
-      \arg        CTC_USBSOFSEL_USBHS: USBHS SOF signal is selected
-      \arg        CTC_USBSOFSEL_USBFS: USBFS SOF signal is selected
-    \param[out] none
-    \retval     none
-*/
-void ctc_usbsof_signal_select(uint32_t usbsof)
-{
-    CTC_CTL1 &= (uint32_t)(~CTC_CTL1_USBSOFSEL);
-    CTC_CTL1 |= (uint32_t)usbsof;
-}
-
-/*!
     \brief    select reference signal source
     \param[in]  refs:
                 only one parameter can be selected which is shown as below:
       \arg        CTC_REFSOURCE_GPIO: GPIO is selected
       \arg        CTC_REFSOURCE_LXTAL: LXTAL is selected
-      \arg        CTC_REFSOURCE_USBSOF: USBSOF is selected
     \param[out] none
     \retval     none
 */

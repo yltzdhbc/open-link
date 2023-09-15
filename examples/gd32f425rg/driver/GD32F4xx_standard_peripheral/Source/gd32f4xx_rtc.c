@@ -2,14 +2,11 @@
     \file    gd32f4xx_rtc.c
     \brief   RTC driver
 
-    \version 2016-08-15, V1.0.0, firmware for GD32F4xx
-    \version 2018-12-12, V2.0.0, firmware for GD32F4xx
-    \version 2020-09-30, V2.1.0, firmware for GD32F4xx
-    \version 2022-03-09, V3.0.0, firmware for GD32F4xx
+    \version 2023-06-25, V3.1.0, firmware for GD32F4xx
 */
 
 /*
-    Copyright (c) 2022, GigaDevice Semiconductor Inc.
+    Copyright (c) 2023, GigaDevice Semiconductor Inc.
 
     Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -295,7 +292,7 @@ void rtc_current_time_get(rtc_parameter_struct *rtc_initpara_struct)
     rtc_initpara_struct->second = (uint8_t)GET_TIME_SC(temp_tr);
     rtc_initpara_struct->factor_asyn = (uint16_t)GET_PSC_FACTOR_A(temp_pscr);
     rtc_initpara_struct->factor_syn = (uint16_t)GET_PSC_FACTOR_S(temp_pscr);
-    rtc_initpara_struct->am_pm = (uint32_t)(temp_pscr & RTC_TIME_PM);
+    rtc_initpara_struct->am_pm = (uint32_t)(temp_tr & RTC_TIME_PM);
     rtc_initpara_struct->display_format = (uint32_t)(temp_ctlr & RTC_CTL_CS);
 }
 

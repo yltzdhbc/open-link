@@ -38,6 +38,11 @@ int main(void)
             time_last[0] = time_now;
             app_protocol_loop();
         }
+        
+        if (time_now - time_last[1] > 50)
+        {
+
+        }
     }
 }
 
