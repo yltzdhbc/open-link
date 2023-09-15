@@ -1,0 +1,1526 @@
+Dependencies for Project 'proj', Target 'gd32f4x5': (DO NOT MODIFY !)
+F (..\app\main.c)(0x6501BEF2)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/main.o -MD)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (..\bsp\systick.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5C40E42A)
+I (..\app\main.h)(0x6501750A)
+I (..\bsp\gd32f425_bsp_uart.h)(0x6501BFDB)
+I (..\bsp\gd32f425_bsp_can.h)(0x65042FB8)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5C40E42A)
+I (..\..\..\open_protocol\support\ringbuffer.h)(0x6501B122)
+I (C:\Keil_v5\ARM\ARMCLANG\include\inttypes.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x5C40E42A)
+I (..\bsp\gd32f425_bsp_fmc.h)(0x6501750A)
+I (..\app\app_protocol.h)(0x6501750A)
+F (..\app\app_protocol.c)(0x6504316E)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/app_protocol.o -MD)
+I (..\..\..\open_protocol_port\open_protocol_cmd.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\..\..\open_protocol\open_protocol.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (..\..\..\open_protocol_port\open_protocol_upgrade.h)(0x6501750A)
+I (..\..\..\open_protocol\open_protocol_error.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5C40E42A)
+I (..\..\..\open_protocol\support\crc.h)(0x6501750A)
+I (..\bsp\gd32f425_bsp_can.h)(0x65042FB8)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5C40E42A)
+I (..\..\..\open_protocol\support\ringbuffer.h)(0x6501B122)
+I (C:\Keil_v5\ARM\ARMCLANG\include\inttypes.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x5C40E42A)
+I (..\bsp\gd32f425_bsp_uart.h)(0x6501BFDB)
+I (..\bsp\sys_param.h)(0x6501750A)
+F (..\..\..\open_protocol_port\open_protocol_cmd.c)(0x65043159)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/open_protocol_cmd.o -MD)
+I (..\..\..\open_protocol_port\open_protocol_cmd.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\..\..\open_protocol\open_protocol.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (..\..\..\open_protocol\open_protocol_error.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5C40E42A)
+I (..\bsp\sys_param.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5C40E42A)
+F (..\..\..\open_protocol_port\open_protocol_upgrade.c)(0x650431A2)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/open_protocol_upgrade.o -MD)
+I (..\..\..\open_protocol_port\open_protocol_upgrade.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (..\..\..\open_protocol_port\open_protocol_cmd.h)(0x6501750A)
+I (..\..\..\open_protocol\open_protocol.h)(0x6501750A)
+I (..\..\..\open_protocol\open_protocol_error.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5C40E42A)
+I (..\bsp\gd32f425_bsp_fmc.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5C40E42A)
+F (..\bsp\gd32f4xx_it.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_it.o -MD)
+I (..\bsp\gd32f4xx_it.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (..\app\main.h)(0x6501750A)
+I (..\bsp\systick.h)(0x6501750A)
+F (..\bsp\systick.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/systick.o -MD)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (..\bsp\systick.h)(0x6501750A)
+F (..\bsp\sys_param.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/sys_param.o -MD)
+I (..\bsp\sys_param.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+F (..\bsp\gd32f425_bsp_uart.c)(0x6501BFF3)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f425_bsp_uart.o -MD)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (..\bsp\gd32f425_bsp_uart.h)(0x6501BFDB)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5C40E42A)
+I (..\..\..\open_protocol\support\ringbuffer.h)(0x6501B122)
+I (C:\Keil_v5\ARM\ARMCLANG\include\inttypes.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x5C40E42A)
+F (..\bsp\gd32f425_bsp_fmc.c)(0x6501BEE8)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f425_bsp_fmc.o -MD)
+I (..\bsp\gd32f425_bsp_fmc.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5C40E42A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\bsp\gd32f425_bsp_can.c)(0x65043086)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f425_bsp_can.o -MD)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (..\bsp\gd32f425_bsp_can.h)(0x65042FB8)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5C40E42A)
+I (..\..\..\open_protocol\support\ringbuffer.h)(0x6501B122)
+I (C:\Keil_v5\ARM\ARMCLANG\include\inttypes.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x5C40E42A)
+F (..\..\..\open_protocol\open_protocol.c)(0x6504318C)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/open_protocol.o -MD)
+I (..\..\..\open_protocol\open_protocol.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\..\..\open_protocol\support\crc.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5C40E42A)
+F (..\..\..\open_protocol\support\ringbuffer.c)(0x6501B113)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/ringbuffer.o -MD)
+I (..\..\..\open_protocol\support\ringbuffer.h)(0x6501B122)
+I (C:\Keil_v5\ARM\ARMCLANG\include\inttypes.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5C40E42A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x5C40E42A)
+F (..\..\..\open_protocol\support\crc.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/crc.o -MD)
+I (..\..\..\open_protocol\support\crc.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+F (..\driver\CMSIS\GD\GD32F4xx\Source\system_gd32f4xx.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/system_gd32f4xx.o -MD)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\CMSIS\GD\GD32F4xx\Source\ARM\startup_gd32f405_425.s)(0x6501750A)(--cpu Cortex-M4.fp -g-I.\RTE\_gd32f4x5-IC:\Users\yulei\AppData\Local\Arm\Packs\GigaDevice\GD32F4xx_DFP\3.0.3\Device\F4XX\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 527"--pd "GD32F425 SETA 1"--list .\listings\startup_gd32f405_425.lst--xref -o .\objects\startup_gd32f405_425.o--depend .\objects\startup_gd32f405_425.d)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_adc.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_adc.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_can.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_can.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_crc.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_crc.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_ctc.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_ctc.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_dac.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_dac.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_dbg.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_dbg.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_dci.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_dci.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_dma.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_dma.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_enet.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_enet.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_enet.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x5C40E42A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_exmc.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_exmc.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_exti.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_exti.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_fmc.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_fmc.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_fwdgt.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_fwdgt.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_gpio.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_gpio.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_i2c.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_i2c.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_ipa.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_ipa.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_iref.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_iref.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_misc.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_misc.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_pmu.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_pmu.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_rcu.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_rcu.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_rtc.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_rtc.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_sdio.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_sdio.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_spi.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_spi.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_syscfg.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_syscfg.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_timer.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_timer.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_tli.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_tli.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_trng.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_trng.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_usart.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_usart.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)
+F (..\driver\GD32F4xx_standard_peripheral\Source\gd32f4xx_wwdgt.c)(0x6501750A)(-xc -std=gnu99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../driver/CMSIS -I ../driver/CMSIS/GD/GD32F4xx/Include -I ../driver/GD32F4xx_standard_peripheral/Include -I ../app -I ../bsp -I ../../../open_protocol -I ../../../open_protocol/support -I ../../../open_protocol_port-I./RTE/_gd32f4x5-IC:/Users/yulei/AppData/Local/Arm/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="527" -DGD32F425 -DUSE_STDPERIPH_DRIVER -DGD32F425-o ./objects/gd32f4xx_wwdgt.o -MD)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x6501750A)
+I (..\driver\CMSIS\core_cm4.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5C40E42A)
+I (..\driver\CMSIS\cmsis_version.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_compiler.h)(0x6501750A)
+I (..\driver\CMSIS\cmsis_armclang.h)(0x6501750A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5A8EB578)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5C48BD2A)
+I (..\driver\CMSIS\mpu_armv7.h)(0x6501750A)
+I (..\driver\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h)(0x6501750A)
+I (..\bsp\gd32f4xx_libopt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h)(0x6501750A)
+I (..\driver\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h)(0x6501750A)

@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "ringbuffer.h": "c",
+        "gd32f425_bsp_uart.h": "c",
+        "bsp_can.h": "c",
+        "app_protocol.h": "c",
+        "gd32f425_bsp_fmc.h": "c",
+        "gd32f4xx.h": "c",
+        "gd32f425_bsp_can.h": "c"
+    }
+}
