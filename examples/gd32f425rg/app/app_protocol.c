@@ -44,8 +44,8 @@ void app_protocol_init(void)
 {
     open_proto_init(6|0X0200);
 
-    can1_port_idx = open_proto_port_add("CAN", can1_send, can1_receive);
-    open_proto_static_route_add(0x0, 0x0, can1_port_idx, 253);
+//    can1_port_idx = open_proto_port_add("CAN", can1_send, can1_receive);
+//    open_proto_static_route_add(0x0, 0x0, can1_port_idx, 253);
 
     uart0_port_idx = open_proto_port_add("UART0", uart0_send, uart0_receive);
     open_proto_static_route_add(0x0, 0x0, uart0_port_idx, 5);

@@ -1,5 +1,6 @@
 #ifndef __BSP_CAN_H__
 #define __BSP_CAN_H__
+
 #include <string.h>
 #include <stdint.h>
 #include <stdio.h>

@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>GD32F425RG</Device>
           <Vendor>GigaDevice</Vendor>
-          <PackID>GigaDevice.GD32F4xx_DFP.3.0.3</PackID>
+          <PackID>GigaDevice.GD32F4xx_DFP.3.1.0</PackID>
           <PackURL>https://gd32mcu.com/data/documents/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x030000) IRAM2(0x10000000,0x010000) IROM(0x08000000,0x0100000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -82,7 +82,7 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>C:\Keil_v5\ARM\ARMCLANG\bin\fromelf.exe --bin -o  ./bootloader.bin ./Objects/proj.axf</UserProg1Name>
+            <UserProg1Name>C:\Keil_v5\ARM\ARMCLANG\bin\fromelf.exe --bin -o  ./app.bin ./Objects/proj.axf</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -437,6 +437,11 @@
               <FileName>gd32f425_bsp_can.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\gd32f425_bsp_can.c</FilePath>
+            </File>
+            <File>
+              <FileName>gd32f425_bsp_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\gd32f425_bsp_gpio.c</FilePath>
             </File>
           </Files>
         </Group>

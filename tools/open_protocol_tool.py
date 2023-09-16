@@ -122,28 +122,28 @@ def main(args):
 
     # --------------------------------------------------------
     # 发送重启进入loader的指令，让目标开发板进入bootloader再进入升级
-    if options.reset == True:
-        ser = serial.Serial(options.port, options.baud, 8, 'N', 1)
-        if ser.is_open:
-            logging.debug("Reset board to bootloader ...")        
-            ser.write(b'\xaa\x55')
-            time.sleep( 0.5 )
-            ser.close()
-        else:
-            logging.critical("Serial open error!!!")
-        time.sleep( 0.1 )
+    # if options.reset == True:
+    #     ser = serial.Serial(options.port, options.baud, 8, 'N', 1)
+    #     if ser.is_open:
+    #         logging.debug("Reset board to bootloader ...")        
+    #         ser.write(b'\xaa\x55')
+    #         time.sleep( 0.5 )
+    #         ser.close()
+    #     else:
+    #         logging.critical("Serial open error!!!")
+    #     time.sleep( 0.1 )
     # --------------------------------------------------------
 
     main_func = MainFunc(options)
     # 查询版本
     ret = main_func.to_query()
 
-    if ret == True:
-        # 执行升级过程
-        main_func.to_upgrade()
-    else:
-        logging.debug(
-            "Failed to query the development board and is about to exit")
+    # if ret == True:
+    #     # 执行升级过程
+    #     main_func.to_upgrade()
+    # else:
+    #     logging.debug(
+    #         "Failed to query the development board and is about to exit")
 
     return 0
 
@@ -174,3 +174,4 @@ if __name__ == '__main__':
 
 
 # python rmaut.py -d -p "COM32" -f "./bootloader.bin"
+# python open_protocol_tool.py -d -p "COM3" -f "../examples/gd32f425rg/proj/bootloader.bin"

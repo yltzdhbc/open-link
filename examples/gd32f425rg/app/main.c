@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "main.h"
 
+#include "gd32f425_bsp_gpio.h"
 #include "gd32f425_bsp_uart.h"
 #include "gd32f425_bsp_can.h"
 #include "gd32f425_bsp_fmc.h"
@@ -13,12 +14,6 @@ uint8_t g_app_start = 1;
 uint32_t time_now = 0;
 uint32_t time_last[3] = {0};
 
-/*!
-    \brief    main function
-    \param[in]  none
-    \param[out] none
-    \retval     none
-*/
 int main(void)
 {
     systick_config();
@@ -26,6 +21,7 @@ int main(void)
     bsp_can_init();
     bsp_fmc_init();
     bsp_uart_init();
+    bsp_gpio_init();
 
     app_protocol_init();
 
@@ -38,19 +34,12 @@ int main(void)
             time_last[0] = time_now;
             app_protocol_loop();
         }
-        
-        if (time_now - time_last[1] > 50)
-        {
 
+        if (time_now - time_last[1] > 100)
+        {
+            time_last[1] = time_now;
+            gpio_bit_toggle(GPIOB, GPIO_PIN_4);
+            gpio_bit_toggle(GPIOB, GPIO_PIN_5);
         }
     }
 }
-
-// /* retarget the C library printf function to the USART */
-// int fputc(int ch, FILE *f)
-// {
-//     usart_data_transmit(USART0, (uint8_t)ch);
-//     // while (RESET == usart_flag_get(USART0, USART_FLAG_TBE))
-//     //     ;
-//     return ch;
-// }
