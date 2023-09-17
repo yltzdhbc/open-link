@@ -150,7 +150,7 @@ class Upgrade:
 
                 module = ModuleInfoStruct(fields.loader_ver, fields.app_ver, fields.hw_id, fields.sn, pack['src'])
                 module_list.append(module)
-                self.logging.debug('Upgrade: Module Addr:0x%04x, APP:0x%08x, BL:0x%08x, HW_ID:%s, %s'
+                self.logging.debug('Upgrade: Module Addr:0x%04x, APP:0x%08x, BL:0x%08x, HW_ID:%s, SN:%s'
                       % (module.addr, module.app_ver, module.loader_ver, module.hw_id, module.sn))
 
         self.logging.debug('Upgrade: Query version end')
@@ -176,28 +176,33 @@ class Upgrade:
         self.proto.open()
 
         # Step1:进入Loader
+        self.logging.debug('Upgrade: Step1!!! reset to loader')
         self.upgrade_step = 1
         send_fields = EnterLoaderFields(0, module.sn_crc16)
         self.proto.send_pack(module.addr, EnterLoaderFields.CMD, send_fields.encode(), False)
-        self.proto.close()
+
+        # self.proto.close()
         # 等待3秒让APP切换到Loader，然后再发送一遍指令
-        time.sleep(3)
-        self.proto.open()
-        ret_packs = self.proto.send_and_recv_ack_pack(module.addr, EnterLoaderFields.CMD, send_fields.encode())
-        if len(ret_packs) == 0:
-            self.logging.debug('Upgrade: The upgrade fails, and there is no response to the Loader command.')
-            self.upgrade_error_str = 'The upgrade fails, and there is no response to the Loader command.'
-            self.proto.close()
-            return [False, 0]
-        ret_err = CommResponFields.get_rsp_error(ret_packs[0]['data'])
-        if ret_err != 0:
-            self.logging.debug('Upgrade: Upgrade failed, enter Loader error:0x%02x.' % ret_err)
-            self.upgrade_error_str = 'Upgrade failed, enter Loader error:0x%02x.' % ret_err
-            self.proto.close()
-            return [False, ret_err]
+        # time.sleep(3)
+        # self.proto.open()
+
+        # ret_packs = self.proto.send_and_recv_ack_pack(module.addr, EnterLoaderFields.CMD, send_fields.encode())
+
+        # if len(ret_packs) == 0:
+        #     self.logging.debug('Upgrade: The upgrade fails, and there is no response to the Loader command.')
+        #     self.upgrade_error_str = 'The upgrade fails, and there is no response to the Loader command.'
+        #     self.proto.close()
+        #     return [False, 0]
+        # ret_err = CommResponFields.get_rsp_error(ret_packs[0]['data'])
+        # if ret_err != 0:
+        #     self.logging.debug('Upgrade: Upgrade failed, enter Loader error:0x%02x.' % ret_err)
+        #     self.upgrade_error_str = 'Upgrade failed, enter Loader error:0x%02x.' % ret_err
+        #     self.proto.close()
+        #     return [False, ret_err]
         self.logging.debug('Upgrade: enter Loader success')
 
         # Step2:发送待升级的固件信息
+        self.logging.debug('Upgrade: Step2!!! send firmware info')
         self.upgrade_step = 2
         t1 = time.time()
         send_fields = UpgradeInfoFields(0, len(self.firmware), module.sn_crc16,

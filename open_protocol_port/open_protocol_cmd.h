@@ -11,10 +11,11 @@
 #ifndef __OPEN_PROTOCOL_COMMON_H__
 #define __OPEN_PROTOCOL_COMMON_H__
 
-#include "stdint.h"
-#include "open_protocol.h"
-#include "gd32f4xx.h"
+#include <string.h>
+#include <stdint.h>
+#include <stdio.h>
 
+#include "open_protocol.h"
 
 #pragma pack(push, 1)
 

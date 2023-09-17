@@ -275,7 +275,7 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x8000000</StartAddress>
+                <StartAddress>0x8020000</StartAddress>
                 <Size>0x100000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
@@ -337,7 +337,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_STDPERIPH_DRIVER,GD32F425</Define>
+              <Define>USE_STDPERIPH_DRIVER,GD32F425,FIRMWARE_APP</Define>
               <Undefine></Undefine>
               <IncludePath>..\driver\CMSIS;..\driver\CMSIS\GD\GD32F4xx\Include;..\driver\GD32F4xx_standard_peripheral\Include;..\app;..\bsp;..\..\..\open_protocol;..\..\..\open_protocol\support;..\..\..\open_protocol_port</IncludePath>
             </VariousControls>
@@ -442,6 +442,11 @@
               <FileName>gd32f425_bsp_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\gd32f425_bsp_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>gd32f425_bsp_mcu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\gd32f425_bsp_mcu.c</FilePath>
             </File>
           </Files>
         </Group>

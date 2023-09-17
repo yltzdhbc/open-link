@@ -30,11 +30,14 @@ const open_handler_keypair_t open_protocol_fun_req[] =
         {OPEN_CMD_REBOOT, open_cmd_reboot},
         {OPEN_CMD_VERSION, open_cmd_ver},
         {OPEN_CMD_ECHO, open_cmd_echo},
+
         {OPEN_CMD_UPGRADE_ENTER, open_cmd_enter_loader},
+#ifdef FIRMWARE_LOADER
         {OPEN_CMD_UPGRADE_INFO, upgrade_info_pack_handle},
         {OPEN_CMD_UPGRADE_DATA, upgrade_data_pack_handle},
         {OPEN_CMD_UPGRADE_END, upgrade_end_pack_handle},
         {OPEN_CMD_STOP_BOOT_APP, open_cmd_stop_boot_app},
+#endif
 };
 
 static uint8_t can1_port_idx;
@@ -42,10 +45,10 @@ static uint8_t uart0_port_idx;
 
 void app_protocol_init(void)
 {
-    open_proto_init(6|0X0200);
+    open_proto_init(6 | 0X0200);
 
-//    can1_port_idx = open_proto_port_add("CAN", can1_send, can1_receive);
-//    open_proto_static_route_add(0x0, 0x0, can1_port_idx, 253);
+    //    can1_port_idx = open_proto_port_add("CAN", can1_send, can1_receive);
+    //    open_proto_static_route_add(0x0, 0x0, can1_port_idx, 253);
 
     uart0_port_idx = open_proto_port_add("UART0", uart0_send, uart0_receive);
     open_proto_static_route_add(0x0, 0x0, uart0_port_idx, 5);
