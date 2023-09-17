@@ -3,7 +3,7 @@
 #include "gd32f425_bsp_uart.h"
 #include "ringbuffer.h"
 
-#define RX_FIFO_SIZE 256
+#define RX_FIFO_SIZE 1024
 uint8_t rb_uart0_buffer[RX_FIFO_SIZE];
 ring_buffer_t rb_uart0;
 

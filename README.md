@@ -32,3 +32,30 @@ Open-Link是一个具有野心的项目
 ### 主要特性
 - 下载固件
 - 易于使用
+
+### 例子
+使用Tools进行串口OTA
+``` sheel
+python open_protocol_tool.py -d -p "COM3" -f "../examples/gd32f425rg/proj_app/app.bin"
+
+                                                 __  __            __       
+                                                |  \|  \          |  \
+  ______    ______    ______   _______          | $$ \$$ _______  | $$   __
+ /      \  /      \  /      \ |       \  ______ | $$|  \|       \ | $$  /  \r
+|  $$$$$$\|  $$$$$$\|  $$$$$$\| $$$$$$$\|      \| $$| $$| $$$$$$$\| $$_/  $$
+| $$  | $$| $$  | $$| $$    $$| $$  | $$ \$$$$$$| $$| $$| $$  | $$| $$   $$
+| $$__/ $$| $$__/ $$| $$$$$$$$| $$  | $$        | $$| $$| $$  | $$| $$$$$$\
+ \$$    $$| $$    $$ \$$     \| $$  | $$        | $$| $$| $$  | $$| $$  \$$\r
+  \$$$$$$ | $$$$$$$   \$$$$$$$ \$$   \$$         \$$ \$$ \$$   \$$ \$$   \$$
+          | $$
+          | $$
+           \$$
+Options: {'port': 'COM6', 'fw_path': '../examples/gd32f425rg/proj_app/app.bin', 'reset': True, 'dst_addr': None, 'erase_bytes': 0, 'baud': 115200, 'debug': True}
+--------------------------------------------------------------------------------------------------
+Upgrade: Query version start
+Upgrade: Module Addr:0x0206, APP:0x0101000d, BL:0x01010000, HW_ID:b'hD29334\x142251', SN:b'hD29334\x142251'
+Upgrade: Query version end
+Upgrade: 1 Module has been queried
+Input your choose: Download all[y], exit[n], retry[r]:
+
+```

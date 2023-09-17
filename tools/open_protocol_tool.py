@@ -179,8 +179,8 @@ def main(args):
             module = main_func.quired_modules[select_cnt]
             logging.debug("Upgrade: Select module %d/%d" % (select_cnt+1,len(main_func.quired_modules)))
 
-            logging.debug("Upgrade: Select Addr:0x%04d, APP:0x%08X, BL:0x%08X, HWID:%s,%s, " 
-                % (module.addr, module.app_ver, module.loader_ver, module.hwid, module.sn))
+            logging.debug("Upgrade: Select Addr:0x%04x, APP:0x%08x, BL:0x%08x, HWID:%s,%s, " 
+                % (module.addr, module.app_ver, module.loader_ver, module.hw_id, module.sn))
             main_func.hwid = module.hw_id
             main_func.sn = module.sn
             main_func.dst_addr = module.addr
@@ -201,7 +201,7 @@ def main(args):
 
     update_main_time2 = time.time()
     logging.debug("--------------------------------------------------------------------------------------------------")
-    logging.debug("Upgrade: Finish, all use time:%.4fs", %(update_main_time2 - update_main_time1))
+    logging.debug("Upgrade: Finish, all use time:%.4fs" % (update_main_time2 - update_main_time1))
 
     return 0
 

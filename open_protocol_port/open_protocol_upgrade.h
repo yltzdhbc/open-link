@@ -6,7 +6,7 @@
 #include "open_protocol_error.h"
 #include <string.h>
 
-#define MAX_SUPPORT_FW_PACK_SIZE (512)
+#define MAX_SUPPORT_FW_PACK_SIZE (256)
 #define UPGRADE_START_FLASH_ADDRESS (0x08020000)
 #define UPGRADE_END_FLASH_ADDRESS   (0x0809FFFF)
 

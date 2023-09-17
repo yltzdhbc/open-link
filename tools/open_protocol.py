@@ -120,7 +120,7 @@ class OpenProto:
                 time.sleep(0.01)
             if len(packs) > 0:
                 return packs
-            # self.logging.debug('OpenProtocol: Wait for the receive timeout, resend the packet:0x%04x.' % cmd)
+            self.logging.debug('OpenProtocol: Wait for the receive timeout, resend the packet:0x%04x.' % cmd)
         return []
 
     def __pack_data(self, dst, attr, seq, cmd, data):

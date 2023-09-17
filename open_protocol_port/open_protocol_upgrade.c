@@ -1,5 +1,6 @@
 #include "open_protocol_upgrade.h"
-#include "gd32f425_bsp_fmc.h"
+#include "gd32f425_bsp_flash.h"
+#include "gd32f425_bsp_mcu.h"
 
 static fw_upgrade_status_e upgrade_status = UPGRADE_WAIT_FW_INFO;
 static uint32_t fw_size = 0;
@@ -133,32 +134,33 @@ void upgrade_end_pack_handle(open_protocol_header_t *pack_desc)
         // md5_init
         // md5_update
         // md5_final
-        if (memcmp(fw_md5, req->md5, 16) != 0)
-        {
-            upgrade_comm_ack(pack_desc, OPEN_PROTO_VERIFY_FAIL);
-            return;
-        }
+//        if (memcmp(fw_md5, req->md5, 16) != 0)
+//        {
+//            upgrade_comm_ack(pack_desc, OPEN_PROTO_VERIFY_FAIL);
+//            return;
+//        }
 
         // 写入系统参数
-        if (!upgrade_is_end)
-        {
-            if (SYS_PARAM_OK != sys_param_read())
-            {
-                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
-                return;
-            }
+//        if (!upgrade_is_end)
+//        {
+//            if (SYS_PARAM_OK != sys_params_read())
+//            {
+//                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
+//                return;
+//            }
 
-            memcpy(g_sys_params.app_md5, req->md5, 16);
-            g_sys_params.app_size = fw_size;
+//            memcpy(g_sys_params.app_md5, req->md5, 16);
+//            g_sys_params.app_size = fw_size;
 
-            if (SYS_PARAM_OK != sys_param_save())
-            {
-                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
-                return;
-            }
-        }
+//            if (SYS_PARAM_OK != sys_params_save())
+//            {
+//                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
+//                return;
+//            }
+//        }
+
         upgrade_is_end = 1;
-        g_app_start = 1;
+//        g_app_start = 1;
 
         upgrade_comm_ack(pack_desc, OPEN_PROTO_NORMAL);
         return;

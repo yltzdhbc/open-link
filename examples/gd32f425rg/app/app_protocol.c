@@ -15,7 +15,6 @@
 #include "crc.h"
 #include "gd32f425_bsp_can.h"
 #include "gd32f425_bsp_uart.h"
-#include "sys_param.h"
 
 /* Private typedef -----------------------------------------------------------*/
 typedef struct

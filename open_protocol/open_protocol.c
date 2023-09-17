@@ -22,7 +22,7 @@
 #define OPEN_PROTOCOL_LOCAL_PORT             (0xFF)
 #define OPEN_PROTOCOL_LOOKBACK_PORT          (0xFE)
 
-#define RECV_BUFF_SIZE                       (256)
+#define RECV_BUFF_SIZE                       (1024)
 
 /* Private typedef -----------------------------------------------------------*/
 enum open_unpack_stage

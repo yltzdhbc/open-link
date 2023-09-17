@@ -6,7 +6,7 @@
 #include "gd32f425_bsp_gpio.h"
 #include "gd32f425_bsp_uart.h"
 #include "gd32f425_bsp_can.h"
-#include "gd32f425_bsp_fmc.h"
+#include "gd32f425_bsp_flash.h"
 #include "gd32f425_bsp_mcu.h"
 #include "app_protocol.h"
 
@@ -23,7 +23,7 @@ int main(void)
     systick_config();
 
     bsp_can_init();
-    bsp_fmc_init();
+    bsp_flash_init();
     bsp_uart_init();
     bsp_gpio_init();
 

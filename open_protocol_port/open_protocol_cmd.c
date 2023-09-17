@@ -11,8 +11,8 @@
 #include "open_protocol_cmd.h"
 #include "open_protocol_error.h"
 
-#include "sys_param.h"
 #include "gd32f425_bsp_mcu.h"
+#include "systick.h"
 
 #define APP_VERSION (0X0101000D)
 #define LOADER_VERSION (0X01010000)
@@ -93,6 +93,8 @@ void open_cmd_enter_loader(open_protocol_header_t *pack_desc)
             rsp.err_code = 0;
             open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
         }
+        
+        delay_1ms(50);
         /* user function */
         mcu_set_stop_app_flag();
         mcu_software_reset();
