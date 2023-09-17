@@ -6,7 +6,7 @@
 #include "open_protocol_error.h"
 #include <string.h>
 
-#define MAX_SUPPORT_FW_PACK_SIZE (256)
+#define MAX_SUPPORT_FW_PACK_SIZE (512)
 #define UPGRADE_START_FLASH_ADDRESS (0x08020000)
 #define UPGRADE_END_FLASH_ADDRESS   (0x0809FFFF)
 
@@ -51,7 +51,7 @@ typedef struct
     uint32_t pack_idx;
     uint16_t pack_size;
     uint16_t sn_crc16;
-    uint8_t fw_data[256];
+    uint8_t fw_data[MAX_SUPPORT_FW_PACK_SIZE];
 } open_cmd_upgrade_data_req;
 
 #define OPEN_CMD_UPGRADE_END (0x0024)

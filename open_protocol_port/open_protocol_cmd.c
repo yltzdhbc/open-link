@@ -28,11 +28,11 @@ void open_cmd_reboot(open_protocol_header_t *pack_desc)
     open_cmd_version_rsp_t rsp;
     if (pack_desc->is_ack == 0)
     {
-        mcu_software_reset();
         if (pack_desc->need_ack)
         {
             open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
         }
+        mcu_software_reset();
     }
 }
 
@@ -51,7 +51,7 @@ void open_cmd_ver(open_protocol_header_t *pack_desc)
             rsp.loader_ver = LOADER_VERSION;
             rsp.app_ver = APP_VERSION;
             // memcpy(rsp.hw_id, HW_VER_ID, sizeof(HW_VER_ID));
-             memcpy(rsp.hw_id, g_sn, sizeof(g_sn));
+            memcpy(rsp.hw_id, g_sn, sizeof(g_sn));
             memcpy(rsp.sn, g_sn, sizeof(g_sn));
             open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
         }

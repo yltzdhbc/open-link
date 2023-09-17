@@ -411,8 +411,29 @@ int16_t data_16_2[10];
 int8_t data_8_1[10] = {0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D};
 int8_t data_8_2[10];
 
+
+sys_cfg_params_t g_sys_params;
+
+
+int sys_params_save()
+{
+
+}
+
+
+int sys_params_read()
+{
+    
+}
+
 void bsp_fmc_init(void)
 {
+
+    sys_params_read();
+    g_sys_params.boot_times++;
+    sys_params_save();
+
+
     // /* erases the sector of a given sector number */
     // fmc_erase_sector_by_address(ERASE_ADDRESS);
 

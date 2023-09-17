@@ -22,11 +22,11 @@ void upgrade_info_pack_handle(open_protocol_header_t *pack_desc)
 {
     open_cmd_upgrade_info_req *req = (open_cmd_upgrade_info_req *)(pack_desc->data);
 
-//    /* 匹配硬件码和SN的CRC16 */
-//    if ((strncmp(local_hw_id, (char *)req->hw_id, 16) != 0) && (req->sn_crc16 != local_sn_crc16))
-//    {
-//        return;
-//    }
+    /* 匹配硬件码和SN的CRC16 */
+    if ((strncmp(local_hw_id, (char *)req->hw_id, 16) != 0) && (req->sn_crc16 != local_sn_crc16))
+    {
+        return;
+    }
 
     if (pack_desc->is_ack == 0)
     {
@@ -100,6 +100,12 @@ void upgrade_data_pack_handle(open_protocol_header_t *pack_desc)
                 upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
                 return;
             }
+            flash_write_ptr += req->pack_size;
+            fw_pack_idx++;
+            if (flash_write_ptr >= fw_size)
+            {
+                upgrade_status = UPGRADE_WAIT_END;
+            }
         }
 
         upgrade_comm_ack(pack_desc, OPEN_PROTO_NORMAL);
@@ -112,6 +118,7 @@ void upgrade_end_pack_handle(open_protocol_header_t *pack_desc)
     open_cmd_upgrade_end_req *req = (open_cmd_upgrade_end_req *)(pack_desc->data);
     uint32_t flash_write_num = MAX_SUPPORT_FW_PACK_SIZE;
     uint8_t fw_md5[16];
+    // MD5_CTX md5_ctx;
 
     if (pack_desc->is_ack == 0 && req->sn_crc16 == local_sn_crc16)
     {
@@ -122,11 +129,36 @@ void upgrade_end_pack_handle(open_protocol_header_t *pack_desc)
             return;
         }
 
-        // 計算MO5进行对比
+        // 计算MD5进行对比
+        // md5_init
+        // md5_update
+        // md5_final
+        if (memcmp(fw_md5, req->md5, 16) != 0)
+        {
+            upgrade_comm_ack(pack_desc, OPEN_PROTO_VERIFY_FAIL);
+            return;
+        }
 
         // 写入系统参数
+        if (!upgrade_is_end)
+        {
+            if (SYS_PARAM_OK != sys_param_read())
+            {
+                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
+                return;
+            }
 
+            memcpy(g_sys_params.app_md5, req->md5, 16);
+            g_sys_params.app_size = fw_size;
+
+            if (SYS_PARAM_OK != sys_param_save())
+            {
+                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
+                return;
+            }
+        }
         upgrade_is_end = 1;
+        g_app_start = 1;
 
         upgrade_comm_ack(pack_desc, OPEN_PROTO_NORMAL);
         return;
@@ -135,6 +167,22 @@ void upgrade_end_pack_handle(open_protocol_header_t *pack_desc)
 
 int upgrade_check_app(uint8_t *app_md5, uint32_t app_size)
 {
+    // uint8_t md5[16];
+    // // MD5_CTX md5_ctx;
+    // if (app_size > UPGRADE_END_FLASH_ADDRESS - UPGRADE_START_FLASH_ADDRESS)
+    // {
+    //     return OPEN_PROTO_VERIFY_FAIL;
+    // }
+
+    // // md5_init
+    // // md5_update
+    // // md5_final
+
+    // if (memcmp(md5, app_md5, 16) != 0)
+    // {
+    //     return OPEN_PROTO_VERIFY_FAIL;
+    // }
+
     return 0;
 }
 

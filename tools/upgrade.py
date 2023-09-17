@@ -18,7 +18,21 @@ from ctypes import *
 import hashlib
 import dji_crc
 import time
+import logging
+import math
 
+SEND_PACKET_SIZE = 512
+
+def printProgress(iteration, total, prefix='', suffix='', decimals=1, barLength=100):
+    import sys
+    formatStr = "{0:." + str(decimals) + "f}"
+    percent = formatStr.format(100*(iteration/float(total)))
+    filledLength = int(round(barLength * iteration / float(total)))
+    bar = '#' * filledLength + '-' * (barLength  - filledLength)
+    sys.stdout.write('\r%s |%s| %s%s %s' % (prefix, bar, percent, '%', suffix)),
+    if iteration == total:
+        sys.stdout.write('\n')
+    sys.stdout.flush()
 
 class OpenProtoDataFields(LittleEndianStructure):
     def encode(self):
@@ -88,7 +102,7 @@ class UpgradeDataFields(OpenProtoDataFields):
         ('pack_idx', c_uint32),
         ('pack_size', c_uint16),
         ('sn_crc16', c_uint16),
-        ('m_data', c_uint8 * 256),
+        ('m_data', c_uint8 * SEND_PACKET_SIZE),
     ]
     CMD = 0x00023
 
@@ -116,6 +130,8 @@ class ModuleInfoStruct:
                 break
             self.sn_crc16 = dji_crc.get_crc16_check(bytes([ch]), self.sn_crc16)
 
+update_time_1 = 0
+update_time_2 = 0
 
 class Upgrade:
     def __init__(self, proto: OpenProto, logging):
@@ -130,6 +146,9 @@ class Upgrade:
         self.logging = logging
 
     def query_ver(self):
+        global update_time_1
+        update_time_1 = time.time()
+
         self.proto.open()
         ret_packs = self.proto.send_and_recv_ack_pack(0xFFFF, QueryVerFields.CMD, None, True, dst_only_one=False)
         self.proto.close()
@@ -175,31 +194,34 @@ class Upgrade:
 
         self.proto.open()
 
+
         # Step1:进入Loader
-        self.logging.debug('Upgrade: Step1!!! reset to loader')
+        # self.logging.debug('Upgrade: Step1!!! reset to loader')
         self.upgrade_step = 1
         send_fields = EnterLoaderFields(0, module.sn_crc16)
         self.proto.send_pack(module.addr, EnterLoaderFields.CMD, send_fields.encode(), False)
 
-        # self.proto.close()
+        self.proto.close()
         # 等待3秒让APP切换到Loader，然后再发送一遍指令
-        # time.sleep(3)
-        # self.proto.open()
+        time.sleep(1)
+        self.proto.open()
 
-        # ret_packs = self.proto.send_and_recv_ack_pack(module.addr, EnterLoaderFields.CMD, send_fields.encode())
+        ret_packs = self.proto.send_and_recv_ack_pack(module.addr, EnterLoaderFields.CMD, send_fields.encode())
 
-        # if len(ret_packs) == 0:
-        #     self.logging.debug('Upgrade: The upgrade fails, and there is no response to the Loader command.')
-        #     self.upgrade_error_str = 'The upgrade fails, and there is no response to the Loader command.'
-        #     self.proto.close()
-        #     return [False, 0]
-        # ret_err = CommResponFields.get_rsp_error(ret_packs[0]['data'])
-        # if ret_err != 0:
-        #     self.logging.debug('Upgrade: Upgrade failed, enter Loader error:0x%02x.' % ret_err)
-        #     self.upgrade_error_str = 'Upgrade failed, enter Loader error:0x%02x.' % ret_err
-        #     self.proto.close()
-        #     return [False, ret_err]
+        if len(ret_packs) == 0:
+            self.logging.debug('Upgrade: The upgrade fails, and there is no response to the Loader command.')
+            self.upgrade_error_str = 'The upgrade fails, and there is no response to the Loader command.'
+            self.proto.close()
+            return [False, 0]
+        ret_err = CommResponFields.get_rsp_error(ret_packs[0]['data'])
+        if ret_err != 0:
+            self.logging.debug('Upgrade: Upgrade failed, enter Loader error:0x%02x.' % ret_err)
+            self.upgrade_error_str = 'Upgrade failed, enter Loader error:0x%02x.' % ret_err
+            self.proto.close()
+            return [False, ret_err]
+
         self.logging.debug('Upgrade: enter Loader success')
+
 
         # Step2:发送待升级的固件信息
         self.logging.debug('Upgrade: Step2!!! send firmware info')
@@ -222,27 +244,30 @@ class Upgrade:
             self.upgrade_error_str = 'Failed to upgrade, failed to send firmware information:0x%02x.' % ret_err
             self.proto.close()
             return [False, ret_err]
-        self.logging.debug('Upgrade: Send firmware information successfully, Flash erase time:%.4f' % (t2 - t1))
+        self.logging.debug('Upgrade: Send firmware information successfully, Flash erase time:%.4fs' % (t2 - t1))
 
         # Step3: 传输固件数据
         self.upgrade_step = 3
         fw_ptr = 0
         fw_pack_idx = 0
+        packet_num = math.ceil(len(self.firmware)/SEND_PACKET_SIZE)
+        self.logging.debug('Upgrade: send firmware data start, firmware size:%d(%.2fk), packet size:%d(%.2fk), packet num:%d' % (len(self.firmware), len(self.firmware)/1024, SEND_PACKET_SIZE, (SEND_PACKET_SIZE/1024), packet_num))
+        download_cnt = 0
         while fw_ptr < len(self.firmware):
-            if len(self.firmware) - fw_ptr >= 256:
-                fw_pack = self.firmware[fw_ptr: fw_ptr + 256]
-                fw_pack_size = 256
-                fw_ptr += 256
+            if len(self.firmware) - fw_ptr >= SEND_PACKET_SIZE:
+                fw_pack = self.firmware[fw_ptr: fw_ptr + SEND_PACKET_SIZE]
+                fw_pack_size = SEND_PACKET_SIZE
+                fw_ptr += SEND_PACKET_SIZE
             else:
                 fw_pack = self.firmware[fw_ptr:]
                 fw_pack_size = len(self.firmware) - fw_ptr
-                fw_pack += bytes([0] * (256 - fw_pack_size))
+                fw_pack += bytes([0] * (SEND_PACKET_SIZE - fw_pack_size))
                 fw_ptr += fw_pack_size
 
             send_fields = UpgradeDataFields(0, fw_pack_idx, fw_pack_size, module.sn_crc16,
-                                            OpenProtoDataFields.to_c_array(fw_pack, 256))
+                                            OpenProtoDataFields.to_c_array(fw_pack, SEND_PACKET_SIZE))
             ret_packs = self.proto.send_and_recv_ack_pack(module.addr, UpgradeDataFields.CMD, send_fields.encode(),
-                                                          retry=50)
+                                                          wait_time=0.2, retry=50)
             if len(ret_packs) == 0:
                 self.logging.debug('Upgrade: Upgrade failed, no response to sending firmware data.')
                 self.upgrade_error_str = 'Upgrade failed, no response to sending firmware data.'
@@ -255,9 +280,11 @@ class Upgrade:
                 self.proto.close()
                 return [False, ret_err]
             fw_pack_idx += 1
-            self.download_progress = float(fw_ptr)/len(self.firmware)
-            self.logging.debug('Upgrade: Send firmware data successfully, idx:%d (%3.1f%%)' % (fw_pack_idx, 100 * float(fw_ptr)/len(self.firmware)))
+            # self.download_progress = float(fw_ptr)/len(self.firmware)
+            # self.logging.debug('Upgrade: Send firmware data successfully, idx:%d (%3.1f%%)' % (fw_pack_idx, 100 * float(fw_ptr)/len(self.firmware)))
             # self.logging.debug('Send idx:%d (%3.1f%%)' % (fw_pack_idx, 100 * float(fw_ptr)/len(self.firmware)))
+            download_cnt+=1
+            printProgress(download_cnt, packet_num, prefix='Upgrade:', suffix=' ', barLength=50)
 
         # Step4: 发送传输完成
         self.upgrade_step = 4
@@ -277,7 +304,10 @@ class Upgrade:
             return [False, ret_err]
 
         self.proto.close()
-        self.logging.debug('Upgrade: Send firmware transfer complete command successfully')
-        self.logging.debug('Upgrade: upgrade successed')
+        # self.logging.debug('Upgrade: Send firmware transfer complete command successfully')
+        # self.logging.debug('Upgrade: upgrade successed')
+
+        global update_time_2
+        update_time_2 = time.time()
         self.upgrade_step = 5
         return [True, 0]

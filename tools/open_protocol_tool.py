@@ -48,16 +48,19 @@ class MainFunc():
         self.upgrade_monitor_flag = 0
         self.upgrade = None
 
+        self.quired_modules = None
+
     def to_query(self):
         try:
             proto = OpenProto(self.port, self.baud, LOCAL_ADDR, logging)
             upgrade = Upgrade(proto, logging)
             modules = upgrade.query_ver()
             logging.debug("Upgrade: %d Module has been queried", len(modules))
-            # 取第一个模块进行升级
-            self.hwid = modules[0].hw_id
-            self.sn = modules[0].sn
-            self.dst_addr = modules[0].addr
+            self.quired_modules = modules
+            # # 取第一个模块进行升级
+            # self.hwid = modules[0].hw_id
+            # self.sn = modules[0].sn
+            # self.dst_addr = modules[0].addr
             return True
         except Exception as e:
             logging.debug("Error", "Queried Faild")
@@ -100,8 +103,25 @@ class MainFunc():
             self.upgrade_monitor_flag = -1
             return
 
+def start_print():
+    sys.stdout.write("                                                 __  __            __       \r\n")
+    sys.stdout.write("                                                |  \|  \          |  \      \r\n")
+    sys.stdout.write("  ______    ______    ______   _______          | $$ \$$ _______  | $$   __ \r\n")
+    sys.stdout.write(" /      \  /      \  /      \ |       \  ______ | $$|  \|       \ | $$  /  \\r\n")
+    sys.stdout.write("|  $$$$$$\|  $$$$$$\|  $$$$$$\| $$$$$$$\|      \| $$| $$| $$$$$$$\| $$_/  $$\r\n")
+    sys.stdout.write("| $$  | $$| $$  | $$| $$    $$| $$  | $$ \$$$$$$| $$| $$| $$  | $$| $$   $$ \r\n")
+    sys.stdout.write("| $$__/ $$| $$__/ $$| $$$$$$$$| $$  | $$        | $$| $$| $$  | $$| $$$$$$\ \r\n")
+    sys.stdout.write(" \$$    $$| $$    $$ \$$     \| $$  | $$        | $$| $$| $$  | $$| $$  \$$\\r\n")
+    sys.stdout.write("  \$$$$$$ | $$$$$$$   \$$$$$$$ \$$   \$$         \$$ \$$ \$$   \$$ \$$   \$$\r\n")
+    sys.stdout.write("          | $$                                                              \r\n")
+    sys.stdout.write("          | $$                                                              \r\n")
+    sys.stdout.write("           \$$                                                              \r\n")
 
 def main(args):
+
+    start_print()
+
+    update_main_time1 = time.time()
 
     options = parserFunc(args)
 
@@ -121,6 +141,8 @@ def main(args):
         logging.critical("Not enough arguments.")
         return 1
 
+    logging.debug("--------------------------------------------------------------------------------------------------")
+
     # # --------------------------------------------------------
     # # 发送重启进入loader的指令，让目标开发板进入bootloader再进入升级
     # if options.reset == True:
@@ -136,15 +158,50 @@ def main(args):
     # # --------------------------------------------------------
 
     main_func = MainFunc(options)
-    # 查询版本
-    ret = main_func.to_query()
+
+    while True:
+        ret = main_func.to_query()
+        x = input("Input your choose: Download all[y], exit[n], retry[r]: ")
+        if x=="y":
+            break
+        elif x== "n":
+            return 0
+        elif x=="r":
+            continue
+        else:
+            break
 
     if ret == True:
-        # 执行升级过程
-        main_func.to_upgrade()
+        select_cnt = 0
+        retry_times = 0
+        num_of_modules = len(main_func.quired_modules)
+        while select_cnt < num_of_modules:
+            module = main_func.quired_modules[select_cnt]
+            logging.debug("Upgrade: Select module %d/%d" % (select_cnt+1,len(main_func.quired_modules)))
+
+            logging.debug("Upgrade: Select Addr:0x%04d, APP:0x%08X, BL:0x%08X, HWID:%s,%s, " 
+                % (module.addr, module.app_ver, module.loader_ver, module.hwid, module.sn))
+            main_func.hwid = module.hw_id
+            main_func.sn = module.sn
+            main_func.dst_addr = module.addr
+            main_func.to_upgrade()
+
+            if main_func.upgrade_monitor_flag != -1:
+                select_cnt +=1
+            else:
+                logging.debug("one more try")
+                time.sleep(2)
+                retry_times += 1
+                if(retry_times >= 1):
+                    break
     else:
         logging.debug(
             "Failed to query the development board and is about to exit")
+
+
+    update_main_time2 = time.time()
+    logging.debug("--------------------------------------------------------------------------------------------------")
+    logging.debug("Upgrade: Finish, all use time:%.4fs", %(update_main_time2 - update_main_time1))
 
     return 0
 
