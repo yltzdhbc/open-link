@@ -121,7 +121,6 @@ def main(args):
 
     start_print()
 
-    update_main_time1 = time.time()
 
     options = parserFunc(args)
 
@@ -172,6 +171,8 @@ def main(args):
             break
 
     if ret == True:
+        update_main_time1 = time.time()
+
         select_cnt = 0
         retry_times = 0
         num_of_modules = len(main_func.quired_modules)

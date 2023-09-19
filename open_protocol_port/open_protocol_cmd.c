@@ -11,12 +11,24 @@
 #include "open_protocol_cmd.h"
 #include "open_protocol_error.h"
 
+#ifdef STM32F407xx
+#include "stm32f4xx.h"
+#include "stm32f407_bsp_mcu.h"
+#else
 #include "gd32f425_bsp_mcu.h"
 #include "systick.h"
+#endif
 
 #define APP_VERSION (0X0101000D)
 #define LOADER_VERSION (0X01010000)
 #define HW_VER_ID "target_v2.0.1"
+
+#ifdef STM32F407xx
+#define OPEN_PROTOCOL_DELAY(ms) HAL_Delay(ms)
+#else
+#define OPEN_PROTOCOL_DELAY(ms) delay_1ms(ms)
+#endif
+
 
 /**
  * @brief 重启
@@ -49,10 +61,10 @@ void open_cmd_ver(open_protocol_header_t *pack_desc)
         if (pack_desc->need_ack)
         {
             rsp.loader_ver = LOADER_VERSION;
+            memcpy(rsp.sn, g_sn, sizeof(g_sn));
             rsp.app_ver = APP_VERSION;
             // memcpy(rsp.hw_id, HW_VER_ID, sizeof(HW_VER_ID));
             memcpy(rsp.hw_id, g_sn, sizeof(g_sn));
-            memcpy(rsp.sn, g_sn, sizeof(g_sn));
             open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
         }
     }
@@ -93,8 +105,8 @@ void open_cmd_enter_loader(open_protocol_header_t *pack_desc)
             rsp.err_code = 0;
             open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
         }
-        
-        delay_1ms(50);
+
+        OPEN_PROTOCOL_DELAY(50);
         /* user function */
         mcu_set_stop_app_flag();
         mcu_software_reset();

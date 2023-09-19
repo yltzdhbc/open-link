@@ -1,6 +1,12 @@
 #include "open_protocol_upgrade.h"
+
+#ifdef STM32F407xx
+#include "stm32f407_bsp_flash.h"
+#include "stm32f407_bsp_mcu.h"
+#else
 #include "gd32f425_bsp_flash.h"
 #include "gd32f425_bsp_mcu.h"
+#endif
 
 static fw_upgrade_status_e upgrade_status = UPGRADE_WAIT_FW_INFO;
 static uint32_t fw_size = 0;

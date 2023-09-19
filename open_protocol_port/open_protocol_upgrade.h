@@ -1,14 +1,19 @@
 #ifndef __UPGRADE_H__
 #define __UPGRADE_H__
 
+#ifdef STM32F407xx
+#include "stm32f4xx.h"
+#else
 #include "gd32f4xx.h"
+#endif
+
 #include "open_protocol_cmd.h"
 #include "open_protocol_error.h"
 #include <string.h>
 
 #define MAX_SUPPORT_FW_PACK_SIZE (256)
 #define UPGRADE_START_FLASH_ADDRESS (0x08020000)
-#define UPGRADE_END_FLASH_ADDRESS   (0x0809FFFF)
+#define UPGRADE_END_FLASH_ADDRESS (0x0809FFFF)
 
 typedef enum
 {

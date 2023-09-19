@@ -10,6 +10,10 @@
         "open_protocol.h": "c",
         "open_protocol_cmd.h": "c",
         "stdint.h": "c",
-        "gd32f425_bsp_mcu.h": "c"
+        "gd32f425_bsp_mcu.h": "c",
+        "stm32f4xx_hal_conf.h": "c",
+        "usart.h": "c",
+        "stm32f4xx_hal.h": "c",
+        "gd32f425_bsp_gpio.h": "c"
     }
 }
