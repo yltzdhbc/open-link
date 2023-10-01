@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "can.h"
+#include "dma.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -95,33 +96,39 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_CAN1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
 #ifdef FIRMWARE_APP
-    nvic_vector_table_set(NVIC_VECTTAB_FLASH, 0x20000);
+    SCB->VTOR = FLASH_BASE | 0x20000;
+    // NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x20000);
     __enable_irq();
 #endif
 
     // systick_config();
 
-    // bsp_can_init();
+    bsp_can_init();
     bsp_flash_init();
     bsp_uart_init();
     // bsp_gpio_init();
 
-    //bsp_mcu_info_init();
+    bsp_mcu_info_init();
 
     app_protocol_init();
 
 #ifdef FIRMWARE_LOADER
-    gpio_bit_reset(GPIOB, GPIO_PIN_4);
-    gpio_bit_set(GPIOB, GPIO_PIN_5);
+    HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 0);
+    HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 1);
     if (*stop_boot_app_flag == STOP_BOOT_APP_FLAG_VAR)
     {
         g_app_start = 0;
         *stop_boot_app_flag = 0;
+    }
+    else
+    {
+        g_app_start = 1;
     }
 #endif
 
@@ -137,28 +144,28 @@ int main(void)
 
     time_now = HAL_GetTick();
 
-    if (time_now - time_last[0] > 2)
+    if (time_now - time_last[0] > 10)
     {
         time_last[0] = time_now;
         app_protocol_loop();
     }
 
 #ifdef FIRMWARE_LOADER
-    if (time_now - time_last[2] > 10)
+    if (time_now - time_last[2] > 100)
     {
         time_last[2] = time_now;
         if (g_app_start == 1 && time_now > 1000)
         {
-            gpio_bit_set(GPIOB, GPIO_PIN_4);
+            HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 0);
             mcu_app_start();
         }
-        gpio_bit_toggle(GPIOB, GPIO_PIN_4);
+        HAL_GPIO_TogglePin(GPIOH, GPIO_PIN_12);
     }
 #else
     if (time_now - time_last[2] > 100)
     {
         time_last[2] = time_now;
-        HAL_GPIO_TogglePin(GPIOH, GPIO_PIN_10);
+        HAL_GPIO_TogglePin(GPIOH, GPIO_PIN_11);
     }
 #endif
   }

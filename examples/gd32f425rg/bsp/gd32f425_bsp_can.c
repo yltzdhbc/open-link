@@ -28,14 +28,14 @@ void can1_send(uint8_t *buf, uint16_t len)
     can_frame_t tx_frame;
 
     // 将所有data数据加入到环形缓冲中
-    ring_buffer_queue_arr(can1_tx[0].rb, (uint8_t *)buf, len);
+    ring_buffer_queue_arr(&can1_tx[0].rb, (uint8_t *)buf, len);
 
-    rb_len = ring_buffer_num_items(can1_tx[0].rb);
+    rb_len = ring_buffer_num_items(&can1_tx[0].rb);
     if ((rb_len != 0) && (can_busy == 0) && (len > 0))
     {
         can_busy = 1;
         rb_len = (rb_len > 8) ? 8 : rb_len;
-        ring_buffer_dequeue_arr(can1_tx[0].rb, (uint8_t *)&tx_frame.data[0], rb_len);
+        ring_buffer_dequeue_arr(&can1_tx[0].rb, (uint8_t *)&tx_frame.data[0], rb_len);
         tx_frame.std_id = can1_tx[0].can_id;
         tx_frame.dlc = rb_len;
         can1_send_frame_port(&tx_frame);
@@ -50,11 +50,11 @@ void can1_send(uint8_t *buf, uint16_t len)
 static __inline uint16_t can1_receive_index(uint8_t n, uint8_t *buf, uint16_t buf_size)
 {
     uint16_t len, readlen;
-    len = ring_buffer_num_items(can1_rx[n].rb);
+    len = ring_buffer_num_items(&can1_rx[n].rb);
     if (len > 0)
     {
         len = (len > buf_size) ? buf_size : len;
-        readlen = ring_buffer_dequeue_arr(can1_rx[n].rb, (uint8_t *)buf, len);
+        readlen = ring_buffer_dequeue_arr(&can1_rx[n].rb, (uint8_t *)buf, len);
     }
     else
     {
@@ -71,13 +71,13 @@ uint16_t can1_receive(uint8_t *buf, uint16_t buf_size)
 void can1_rx_int_handle(void)
 {
     can_frame_t rx_frame;
-    if (can1_recv_frame_port(&rx_frame) != 0)
+    if (can1_recv_frame_port(&rx_frame) == 0)
     {
         for (uint8_t n = 0; n < (sizeof(can1_rx) / sizeof(can1_rx[0])); n++)
         {
             if (rx_frame.std_id == can1_rx[n].can_id)
             {
-                ring_buffer_queue_arr(can1_rx[n].rb, (uint8_t *)&rx_frame.data[0], rx_frame.dlc);
+                ring_buffer_queue_arr(&can1_rx[n].rb, (uint8_t *)&rx_frame.data[0], rx_frame.dlc);
                 break;
             }
         }
@@ -89,11 +89,11 @@ void can1_tx_int_handle(void)
     uint32_t rb_len;
     can_frame_t tx_frame;
 
-    rb_len = ring_buffer_num_items(can1_tx[0].rb);
+    rb_len = ring_buffer_num_items(&can1_tx[0].rb);
     if (rb_len != 0)
     {
         rb_len = (rb_len > 8) ? 8 : rb_len;
-        ring_buffer_dequeue_arr(can1_tx[0].rb, (uint8_t *)&tx_frame.data[0], rb_len);
+        ring_buffer_dequeue_arr(&can1_tx[0].rb, (uint8_t *)&tx_frame.data[0], rb_len);
         tx_frame.std_id = can1_tx[0].can_id;
         tx_frame.dlc = rb_len;
         can1_send_frame_port(&tx_frame);
@@ -143,7 +143,7 @@ static void can1_send_frame_port(can_frame_t *frame)
 void CAN0_TX_IRQHandler(void)
 {
     can_flag_clear(CAN0, CAN_FLAG_MTF0);
-    can1_rx_int_handle();
+    can1_tx_int_handle();
 }
 
 void CAN0_RX0_IRQHandler(void)
@@ -154,8 +154,11 @@ void CAN0_RX0_IRQHandler(void)
 // user init----------------------------------------------------------------------------------
 void bsp_can1_init(void)
 {
-    ring_buffer_init(can1_tx[0].rb, rb_can1_tx_buffer, sizeof(rb_can1_tx_buffer));
-    ring_buffer_init(can1_rx[0].rb, rb_can1_rx_buffer, sizeof(rb_can1_rx_buffer));
+    can1_tx[0].can_id = 0X020;
+    can1_rx[0].can_id = 0X021;
+    
+    ring_buffer_init(&can1_tx[0].rb, rb_can1_tx_buffer, sizeof(rb_can1_tx_buffer));
+    ring_buffer_init(&can1_rx[0].rb, rb_can1_rx_buffer, sizeof(rb_can1_rx_buffer));
 
     /* enable can clock */
     rcu_periph_clock_enable(RCU_CAN0);
@@ -193,7 +196,7 @@ void bsp_can1_init(void)
     can_filter.filter_mode = CAN_FILTERMODE_LIST;
     can_filter.filter_bits = CAN_FILTERBITS_16BIT;
     can_filter.filter_list_high = (uint16_t)(0x020 << 5);
-    can_filter.filter_list_low = (uint16_t)(0x020 << 5);
+    can_filter.filter_list_low = (uint16_t)(0x021 << 5);
     can_filter.filter_mask_high = (uint16_t)(0x020 << 5);
     can_filter.filter_mask_low = (uint16_t)(0x020 << 5);
     can_filter.filter_fifo_number = CAN_FIFO0;
@@ -214,7 +217,7 @@ void bsp_can1_init(void)
     /* configure CAN0 NVIC */
     nvic_irq_enable(CAN0_RX0_IRQn, 1, 2);
     nvic_irq_enable(CAN0_TX_IRQn, 1, 3);
-    /* enable CAN receive FIFO1 not empty interrupt */
+    /* enable CAN receive FIFO0 not empty interrupt */
     can_interrupt_enable(CAN0, CAN_INT_RFNE0);
 }
 

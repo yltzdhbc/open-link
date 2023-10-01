@@ -6,9 +6,10 @@
 
 // 用于停止启动的标志(APP和Loader中都不初始化，指定位置0x2020000），重新上电可以被Loader读到
 // 如果等于0x1234abcd则停留在Loader中，该变量进入Loader后置0
-uint32_t *stop_boot_app_flag = (uint32_t *)(0x2002FF00);
+//uint32_t *stop_boot_app_flag = (uint32_t *)(0x2002FF00);
+uint32_t *stop_boot_app_flag = (uint32_t *)(0x2001E000);
 
-uint8_t g_app_start = 1;
+uint8_t g_app_start = 0;
 uint8_t g_sn[16];
 uint16_t g_sn_crc16 = 0;
 
@@ -38,6 +39,14 @@ void getMcuInfo(void)
     for (int i = 0; i < CHIP_SN_BYTES_NUM; i++)
     {
         mcu_info.unique_id[i] = *(uint8_t *)(UNIQUE_ID_ADDR + i);
+        if(mcu_info.unique_id[i] == 0)
+        {
+            mcu_info.unique_id[i] = '.';
+        }
+        if(mcu_info.unique_id[i] == ' ')
+        {
+            mcu_info.unique_id[i] = '_';
+        }
     }
 }
 
@@ -93,6 +102,10 @@ void mcu_app_start(void)
         jump_addr = *(__IO uint32_t *)(FLASH_APP1_ADDR + 4);
         jump_app = (pFunction)jump_addr;
         jump_app();
+    }
+    else
+    {
+        g_app_start = 0;
     }
 }
 

@@ -40,7 +40,7 @@ void upgrade_info_pack_handle(open_protocol_header_t *pack_desc)
         uint32_t erase_bytes = UPGRADE_END_FLASH_ADDRESS - UPGRADE_START_FLASH_ADDRESS;
         if (pack_desc->data_len == sizeof(open_cmd_upgrade_info_req) && req->erase_bytes != 0)
         {
-            erase_bytes = req->erase_bytes;
+            //erase_bytes = req->erase_bytes;
         }
 
         /* 判断固件大小和擦除大小是否在Flash范围内 */

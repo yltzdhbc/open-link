@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
+void USART1_USER_IRQHandler(void);
+
 void uart0_send(uint8_t *data, uint16_t len);
 uint16_t uart0_receive(uint8_t *buff, uint16_t len);
 void bsp_uart_init(void);

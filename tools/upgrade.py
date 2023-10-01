@@ -231,9 +231,11 @@ class Upgrade:
         self.logging.debug('Upgrade: enter Loader success')
 
         # 等待APP切换到Loader
-        time.sleep(1)
+        time.sleep(3)
 
         # Step2:发送待升级的固件信息
+        self.erase_num = len(self.firmware)
+
         self.logging.debug('Upgrade: Step2!!! send firmware info')
         self.logging.debug('Upgrade: Flash erase size:%d(%.2fk)' %
                            (self.erase_num, self.erase_num/1024))
@@ -242,7 +244,7 @@ class Upgrade:
         send_fields = UpgradeInfoFields(0, len(
             self.firmware), module.sn_crc16, OpenProtoDataFields.to_c_array(module.hw_id, 16), self.erase_num)
         ret_packs = self.proto.send_and_recv_ack_pack(
-            module.addr, UpgradeInfoFields.CMD, send_fields.encode(), wait_time=0.5, retry=5)
+            module.addr, UpgradeInfoFields.CMD, send_fields.encode(), wait_time=5, retry=5)
         t2 = time.time()
 
         if len(ret_packs) == 0:
@@ -314,7 +316,7 @@ class Upgrade:
         send_fields = UpgradeEndFields(
             0, OpenProtoDataFields.to_c_array(firmware_md5, 16), module.sn_crc16)
         ret_packs = self.proto.send_and_recv_ack_pack(
-            module.addr, UpgradeEndFields.CMD, send_fields.encode())
+            module.addr, UpgradeEndFields.CMD, send_fields.encode(), wait_time=2.0, retry=3)
         if len(ret_packs) == 0:
             self.logging.debug(
                 'Upgrade: The upgrade failed, no response was sent to the firmware transfer completion command.')

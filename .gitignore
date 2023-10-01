@@ -6,6 +6,13 @@
 *.ko
 *.obj
 *.elf
+*.crf
+*.inp
+*.axf
+*.dep
+*.iex
+*.Bak
+*.Inp
 
 # Linker output
 *.ilk

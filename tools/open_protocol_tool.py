@@ -158,15 +158,21 @@ def main(args):
 
     main_func = MainFunc(options)
 
+    select_addr = 0
+
     while True:
         ret = main_func.to_query()
-        x = input("Input your choose: Download all[y], exit[n], retry[r]: ")
+        x = input("Input your choose: Download all[y], exit[n], retry[r]:, mannul[m]: ")
         if x=="y":
             break
         elif x== "n":
             return 0
         elif x=="r":
             continue
+        # elif x > '210' and x < '220':
+        elif x=="m":
+            select_addr = 0x201
+            break
         else:
             break
 
@@ -179,6 +185,9 @@ def main(args):
         while select_cnt < num_of_modules:
             module = main_func.quired_modules[select_cnt]
             logging.debug("Upgrade: Select module %d/%d" % (select_cnt+1,len(main_func.quired_modules)))
+
+            if select_addr != 0:
+                module.addr = select_addr
 
             logging.debug("Upgrade: Select Addr:0x%04x, APP:0x%08x, BL:0x%08x, HWID:%s,%s, " 
                 % (module.addr, module.app_ver, module.loader_ver, module.hw_id, module.sn))
@@ -228,9 +237,16 @@ if __name__ == '__main__':
 
     .\rmaut.exe -d -p "COM10" -f "D:/ai_hub/ai_hub_module_hw4/Debug/ai_hub_app.bin"
 
+测试指令：
+
+1、查询命令
     AA 00 00 7D 03 01 FF FF 02 00 00 02 00 30 23
+    回复
+    AA 28 00 CA 06 02 03 01 01 00 00 02 00 00 00 01 01 0D 00 01 01 68 44 32 39 33 33 34 14 32 32 35 31 00 00 00 00 68 44 32 39 33 33 34 14 32 32 35 31 00 00 00 00 85 FA
 """
 
 
 # python rmaut.py -d -p "COM32" -f "./bootloader.bin"
 # python open_protocol_tool.py -d -p "COM3" -f "../examples/gd32f425rg/proj_app/app.bin"
+# python open_protocol_tool.py -d -p "COM3" -f "../examples/gd32f425rg/proj_app/app.bin"
+# python open_protocol_tool.py -d -p "COM3" -f "../examples/stm32f407ig_rmc/MDK-ARM/app.bin"

@@ -9,14 +9,14 @@
 typedef struct
 {
     uint16_t can_id;
-    ring_buffer_t *rb;
+    ring_buffer_t rb;
 } ST_CAN_RX;
 
 typedef struct
 {
     uint16_t can_id;
     uint16_t data_len;
-    ring_buffer_t *rb;
+    ring_buffer_t rb;
 } ST_CAN_TX;
 
 typedef struct
