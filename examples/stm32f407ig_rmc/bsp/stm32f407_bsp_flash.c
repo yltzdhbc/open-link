@@ -341,13 +341,13 @@ void bsp_flash_init(void)
 {
     sys_params_read();
     
-//    if(g_sys_params.magic_flag != 0x0a0a0a0a)
-//    {
-//        memset(&g_sys_params, 0, sizeof(sys_cfg_params_t));
-//        g_sys_params.magic_flag = 0x0a0a0a0a;
-//        sys_params_save();
-//    }
-//    else
+    if(g_sys_params.magic_flag != 0x0a0a0a0a)
+    {
+        memset(&g_sys_params, 0, sizeof(sys_cfg_params_t));
+        g_sys_params.magic_flag = 0x0a0a0a0a;
+        sys_params_save();
+    }
+    else
     {
         g_sys_params.boot_times++;
         sys_params_save();

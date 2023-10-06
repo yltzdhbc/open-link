@@ -92,8 +92,9 @@ typedef struct
 */
 
 #define FMC_PAGE_SIZE                   ((uint16_t)(0x100U)) // GD32F4 页大小 4k
-#define SYS_PARAMS_FLASH_START_ADDR     (0x080C0000U)
-#define SYS_PARAMS_FLASH_END_ADDR       (0x080DFFFFU)
+
+#define SYS_PARAMS_FLASH_START_ADDR     (0x080E0000U)
+#define SYS_PARAMS_FLASH_END_ADDR       (0x080FFFFFU)
 #define SYS_PARAMS_FLASH_LENGTH         (0x00020000U)
 
 enum

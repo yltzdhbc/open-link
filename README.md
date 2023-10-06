@@ -109,3 +109,8 @@ Upgrade: 1 Module has been queried
 Input your choose: Download all[y], exit[n], retry[r]:
 
 ```
+
+使用不同的波特率
+``` sheel
+python open_protocol_tool.py -d -p "COM3" -b 921600 -f "../examples/stm32f407ig_rmc/MDK-ARM/app.bin"
+```

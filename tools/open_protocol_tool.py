@@ -159,6 +159,7 @@ def main(args):
     main_func = MainFunc(options)
 
     select_addr = 0
+    test_mode = 0
 
     while True:
         ret = main_func.to_query()
@@ -171,6 +172,7 @@ def main(args):
             continue
         # elif x > '210' and x < '220':
         elif x=="m":
+            test_mode = 1
             select_addr = 0x109
             break
         else:
@@ -186,7 +188,7 @@ def main(args):
             module = main_func.quired_modules[select_cnt]
             logging.debug("Upgrade: Select module %d/%d" % (select_cnt+1,len(main_func.quired_modules)))
 
-            if select_addr != module.addr:
+            if test_mode == 1 and (select_addr != module.addr):
                 select_cnt +=1
                 continue
 
@@ -199,12 +201,13 @@ def main(args):
 
             if main_func.upgrade_monitor_flag != -1:
                 select_cnt +=1
+                time.sleep(3)
             else:
-                time.sleep(2)
                 retry_times += 1
                 if(retry_times >= 1):
                     break
                 logging.debug("one more try")
+                time.sleep(2)
     else:
         logging.debug(
             "Failed to query the development board and is about to exit")
@@ -250,4 +253,4 @@ if __name__ == '__main__':
 # python rmaut.py -d -p "COM32" -f "./bootloader.bin"
 # python open_protocol_tool.py -d -p "COM3" -f "../examples/gd32f425rg/proj_app/app.bin"
 # python open_protocol_tool.py -d -p "COM3" -f "../examples/gd32f425rg/proj_app/app.bin"
-# python open_protocol_tool.py -d -p "COM3" -f "../examples/stm32f407ig_rmc/MDK-ARM/app.bin"
+# python open_protocol_tool.py -d -p "COM3" -b 921600 -f "../examples/stm32f407ig_rmc/MDK-ARM/app.bin"
