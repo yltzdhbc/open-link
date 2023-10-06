@@ -106,6 +106,7 @@ enum
 typedef struct
 {
     /* system params */
+    uint32_t magic_flag;
     uint32_t device_id;
     uint32_t build_time;
     uint32_t boot_times;

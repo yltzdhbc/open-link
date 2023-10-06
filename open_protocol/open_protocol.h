@@ -53,9 +53,10 @@ typedef struct
     {
         struct
         {
-            uint8_t is_ack   : 1;  /*!< 本包是ACK包  */
-            uint8_t need_ack : 1;  /*!< 本包需要ACK */
-            uint8_t res:       6;
+            uint8_t is_ack      : 1;  /*!< 本包是ACK包  */
+            uint8_t need_ack    : 1;  /*!< 本包需要ACK */
+            uint8_t port_idx    : 4;  /*!< 本包来源端口 */
+            uint8_t res         : 2;
         };
         uint8_t attr;
     };

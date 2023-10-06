@@ -180,6 +180,7 @@ int open_proto_ack(open_protocol_header_t* req_header,
     header->is_ack = 1;
     header->need_ack = 0;
     header->cmd_id = req_header->cmd_id;
+    header->port_idx = req_header->port_idx;
 
     if(data_len > 0)
     {
@@ -188,7 +189,10 @@ int open_proto_ack(open_protocol_header_t* req_header,
 
     *tail_crc = crc16_checksum_get((uint8_t*)(header), sizeof(open_protocol_header_t) + header->data_len, OPEN_PROTOCOL_CRC16_INIT);
 
-    open_proto_route(header, OPEN_PROTOCOL_LOCAL_PORT);
+    // open_proto_route(header, OPEN_PROTOCOL_LOCAL_PORT);
+
+    // ACK修改为直接回复来源端口
+    open_port[header->port_idx].send_port((uint8_t*)header, (header->data_len + OPEN_PROTOCOL_NON_DATA_SIZE));
 
     return 0;
 }
@@ -470,9 +474,11 @@ static void open_proto_unpack(uint8_t* data, uint32_t len, uint8_t port_idx)
                 {
                     /* 校验尾部CRC16 */
                     uint16_t tail_crc = *((uint16_t*)(header->data + header->data_len));
-                    if((crc16_checksum_get((uint8_t*)(header),sizeof(open_protocol_header_t) + header->data_len, OPEN_PROTOCOL_CRC16_INIT) == tail_crc) ||
+                    if((crc16_checksum_get((uint8_t*)(header), sizeof(open_protocol_header_t) + header->data_len, OPEN_PROTOCOL_CRC16_INIT) == tail_crc) ||
                         (!OPEN_PROTOCOL_USE_CRC))
                     {
+                        header->port_idx = port_idx;
+
                         /* 包数据全部解析成功*/
                         if((header->dst_addr == OPEN_PROTOCOL_LOCAL_ADDR) || (header->dst_addr == g_local_addr))
                         {

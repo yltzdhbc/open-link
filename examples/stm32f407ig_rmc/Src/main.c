@@ -108,10 +108,13 @@ int main(void)
 #endif
 
     // systick_config();
-
-    bsp_can_init();
+    
     bsp_flash_init();
+    
+    bsp_can_init();
+
     bsp_uart_init();
+    
     // bsp_gpio_init();
 
     bsp_mcu_info_init();

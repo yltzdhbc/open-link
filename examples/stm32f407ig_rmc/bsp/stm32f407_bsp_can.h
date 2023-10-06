@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include "ringbuffer.h"
 
+#define MODEL_SLAVE
+
 typedef struct
 {
     uint16_t can_id;

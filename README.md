@@ -23,9 +23,59 @@ Open-Link是一个具有野心的项目
 ### 主要特性
 - 支持 Open Protocol
 - 底层抽象
+### BOOTLOADER空间划分与设置
+#### 空间划分
+以RM C型开发板为例，STM32F407IG，容量1MB其FLASH空间如下
+```C
+/*
+    STM32F407IG SECCTOR 1MB
+
+    sector0   0x0800 0000 - 0x0800 3FFF   16K      bootloader   2 0000
+    sector1   0x0800 4000 - 0x0800 7FFF   16K      |
+    sector2   0x0800 8000 - 0x0800 BFFF   16K      |
+    sector3   0x0800 C000 - 0x0800 FFFF   16K      |
+    sector4   0x0801 0000 - 0x0801 FFFF   64K      | bootloader-end
+    sector5   0x0802 0000 - 0x0803 FFFF   128K     app          A 0000
+    sector6   0x0804 0000 - 0x0805 FFFF   128K     |
+    sector7   0x0806 0000 - 0x0807 FFFF   128K     |
+    sector8   0x0808 0000 - 0x0809 FFFF   128K     | app-end
+    sector9   0x080A 0000 - 0x080B FFFF   128K     |
+    ...
+    sector10  0x080C 0000 - 0x080D FFFF   128K     params       2 0000
+    sector11  0x080E 0000 - 0x080F FFFF   128K     |
+*/
+```
+该划分方法中 bootloader 占用前128K
+
+app 接着占用 640k
+
+最后为系统变量留下256k的存储空间
+因此再keil中有如下设置
+
+#### bootloader MDK空间设置
+
+Options->Target 选项卡：
+
+![app1](images/bootloader1.png)
+
+Options->Debug，Jlink-Seetings, Flash Download 选项卡：
+
+![app2](images/bootloader2.png)
+
+#### app MDK空间设置
+
+Options->Target 选项卡：
+
+![bootloader1](images/app1.png)
+
+Options->Debug，Jlink-Seetings, Flash Download 选项卡：
+
+![bootloader2](images/app2.png)
+
 
 
 ## Uploader
+
 上位机工具
 
 目前是一个命令行，基于python，可以通过串口实现对固件的下载

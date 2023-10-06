@@ -171,7 +171,7 @@ def main(args):
             continue
         # elif x > '210' and x < '220':
         elif x=="m":
-            select_addr = 0x201
+            select_addr = 0x109
             break
         else:
             break
@@ -186,8 +186,9 @@ def main(args):
             module = main_func.quired_modules[select_cnt]
             logging.debug("Upgrade: Select module %d/%d" % (select_cnt+1,len(main_func.quired_modules)))
 
-            if select_addr != 0:
-                module.addr = select_addr
+            if select_addr != module.addr:
+                select_cnt +=1
+                continue
 
             logging.debug("Upgrade: Select Addr:0x%04x, APP:0x%08x, BL:0x%08x, HWID:%s,%s, " 
                 % (module.addr, module.app_ver, module.loader_ver, module.hw_id, module.sn))
@@ -199,11 +200,11 @@ def main(args):
             if main_func.upgrade_monitor_flag != -1:
                 select_cnt +=1
             else:
-                logging.debug("one more try")
                 time.sleep(2)
                 retry_times += 1
                 if(retry_times >= 1):
                     break
+                logging.debug("one more try")
     else:
         logging.debug(
             "Failed to query the development board and is about to exit")

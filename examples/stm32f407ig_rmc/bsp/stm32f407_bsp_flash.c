@@ -277,36 +277,16 @@ uint32_t flash_erase(uint32_t addr, uint32_t erase_size)
     return FLASH_OK;
 }
 
-// uint32_t flash_write(uint32_t addr, uint8_t *buf, uint32_t num)
-// {
-//     uint32_t ret = FLASH_OK;
-//     flash_write_single_address(addr, (uint32_t *)buf, num);
-//     return ret;
-
-//     //    fmc_unlock();
-//     //    fmc_flag_clear(FMC_FLAG_END | FMC_FLAG_OPERR | FMC_FLAG_WPERR | FMC_FLAG_PGMERR | FMC_FLAG_PGSERR);
-
-//     //    for (uint32_t i = 0; i < num; i++)
-//     //    {
-//     //        if (FMC_READY == fmc_byte_program(addr, buf[i]))
-//     //        {
-//     //            addr++;
-//     //        }
-//     //        else
-//     //        {
-//     //            return FLASH_ERROR;
-//     //        }
-//     //    }
-
-//     //    fmc_lock();
-
-//     //    return FLASH_OK;
-// }
-
-
 uint32_t flash_write(uint32_t addr, uint8_t *buf, uint32_t num)
 {
     HAL_FLASH_Unlock();
+    
+    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP);
+    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_OPERR);
+    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_WRPERR);
+    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_PGAERR);
+    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_PGPERR);
+    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_PGSERR);
 
     for (uint32_t i = 0; i < num; i++)
     {
@@ -325,13 +305,12 @@ uint32_t flash_write(uint32_t addr, uint8_t *buf, uint32_t num)
     return FLASH_OK;
 }
 
-
-
-
 int sys_params_read(void)
 {
     __disable_irq();
+    
     memcpy(&g_sys_params, (sys_params_addr_flag), sizeof(g_sys_params));
+    
     __enable_irq();
 
     return SYS_PARAM_OK;
@@ -343,7 +322,6 @@ int sys_params_save(void)
 
     __disable_irq();
 
-    /* 擦除Flash */
     if (FLASH_OK != flash_erase(SYS_PARAMS_FLASH_START_ADDR, SYS_PARAMS_FLASH_LENGTH))
     {
         ret = SYS_PARAM_ERROR;
@@ -361,9 +339,17 @@ int sys_params_save(void)
 
 void bsp_flash_init(void)
 {
-    memset(&g_sys_params, 0, sizeof(sys_cfg_params_t));
-
     sys_params_read();
-    g_sys_params.boot_times++;
-    sys_params_save();
+    
+//    if(g_sys_params.magic_flag != 0x0a0a0a0a)
+//    {
+//        memset(&g_sys_params, 0, sizeof(sys_cfg_params_t));
+//        g_sys_params.magic_flag = 0x0a0a0a0a;
+//        sys_params_save();
+//    }
+//    else
+    {
+        g_sys_params.boot_times++;
+        sys_params_save();
+    }
 }

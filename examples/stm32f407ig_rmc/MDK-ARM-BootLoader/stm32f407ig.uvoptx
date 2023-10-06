@@ -120,7 +120,6 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>d</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -162,41 +161,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>171</LineNumber>
+          <LineNumber>342</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134240104</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\..\..\open_protocol_port\open_protocol_upgrade.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\stm32f407ig\../../../open_protocol_port/open_protocol_upgrade.c\171</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>119</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134235854</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Src/main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\stm32f407ig\../Src/main.c\119</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>369</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134234500</Address>
+          <Address>134235276</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -205,7 +172,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\bsp\stm32f407_bsp_flash.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\stm32f407ig\../bsp/stm32f407_bsp_flash.c\369</Expression>
+          <Expression>\\stm32f407ig\../bsp/stm32f407_bsp_flash.c\342</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -308,7 +275,7 @@
 
   <Group>
     <GroupName>Application/MDK-ARM</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

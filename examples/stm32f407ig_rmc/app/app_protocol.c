@@ -15,6 +15,7 @@
 #include "crc.h"
 #include "stm32f407_bsp_can.h"
 #include "stm32f407_bsp_uart.h"
+#include "stm32f407_bsp_flash.h"
 
 /* Private typedef -----------------------------------------------------------*/
 typedef struct
@@ -44,13 +45,19 @@ static uint8_t uart0_port_idx;
 
 void app_protocol_init(void)
 {
-    open_proto_init(1 | 0X0200);
+    
+    open_proto_init(g_sys_params.device_id | 0X0100);
+    
+//#ifdef MODEL_SLAVE
+//#else
+//#endif
+    
+    uart0_port_idx = open_proto_port_add("UART0", uart0_send, uart0_receive);
+    open_proto_static_route_add(0x0, 0x0, uart0_port_idx, 4);
 
     can1_port_idx = open_proto_port_add("CAN", can1_send, can1_receive);
     open_proto_static_route_add(0x0, 0x0, can1_port_idx, 5);
 
-//    uart0_port_idx = open_proto_port_add("UART0", uart0_send, uart0_receive);
-//    open_proto_static_route_add(0x0, 0x0, uart0_port_idx, 5);
 
     for (int i = 0; i < sizeof(open_protocol_fun_req) / sizeof(open_handler_keypair_t); i++)
     {

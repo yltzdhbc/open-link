@@ -1,11 +1,11 @@
 
 #include "stm32f4xx.h"
 #include "stm32f407_bsp_can.h"
+#include "stm32f407_bsp_flash.h"
 
 #include "can.h"
 #define CAN1_TX_IRQ_DISABLE __HAL_CAN_DISABLE_IT(&hcan1, CAN_IT_TX_MAILBOX_EMPTY)
 #define CAN1_TX_IRQ_ENABLE  __HAL_CAN_ENABLE_IT(&hcan1, CAN_IT_TX_MAILBOX_EMPTY)
-
 #define CAN1_TX_FALG_CLEAR  __HAL_CAN_CLEAR_FLAG(&hcan1, CAN_FLAG_TXOK0)
 
 /** bsp_can逻辑
@@ -14,7 +14,7 @@
  *
  */
 
-#define CAN_RB_FIFO_SIZE 256
+#define CAN_RB_FIFO_SIZE 512
 static uint8_t rb_can1_tx_buffer[CAN_RB_FIFO_SIZE];
 static uint8_t rb_can1_rx_buffer[CAN_RB_FIFO_SIZE];
 
@@ -187,15 +187,20 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 // user init----------------------------------------------------------------------------------
 void bsp_can1_init(void)
 {
-    can1_tx[0].can_id = 0X021;
-    can1_rx[0].can_id = 0X020;
-    
+    if(g_sys_params.device_id == 9)
+    {
+        can1_tx[0].can_id = 0X029;
+        can1_rx[0].can_id = 0X021;
+    }
+    else
+    {
+        can1_tx[0].can_id = 0X021;
+        can1_rx[0].can_id = 0X029;
+    }
+
     ring_buffer_init(&can1_tx[0].rb, rb_can1_tx_buffer, sizeof(rb_can1_tx_buffer));
     ring_buffer_init(&can1_rx[0].rb, rb_can1_rx_buffer, sizeof(rb_can1_rx_buffer));
     
-    //ring_buffer_init(can1_rb, rb_can1_tx_buffer, sizeof(rb_can1_tx_buffer));
-    
-
     CAN_FilterTypeDef can_filter_st;
     can_filter_st.FilterActivation = ENABLE;
     can_filter_st.FilterMode = CAN_FILTERMODE_IDMASK;
