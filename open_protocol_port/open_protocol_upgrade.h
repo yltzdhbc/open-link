@@ -71,9 +71,9 @@ typedef struct
 #pragma pack(pop)
 
 void upgrade_init(uint16_t sn_crc16, char *hw_id);
-void upgrade_info_pack_handle(open_protocol_header_t *pack_desc);
-void upgrade_data_pack_handle(open_protocol_header_t *pack_desc);
-void upgrade_end_pack_handle(open_protocol_header_t *pack_desc);
+void upgrade_info_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void upgrade_data_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void upgrade_end_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
 int upgrade_check_app(uint8_t *app_md5, uint32_t app_size);
 
 #endif /* __UPGRADE_H__ */

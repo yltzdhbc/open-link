@@ -67,9 +67,9 @@ typedef struct
 
 #pragma pack(pop)
 
-typedef void (*open_cmd_handler_t)(open_protocol_header_t *pack_desc);          /*!< 解包回调函数  */
-typedef void (*open_proto_send_port_t)(uint8_t* data, uint16_t data_size);      /*!< 对外发送接口函数  */
-typedef uint16_t (*open_proto_recv_port_t)(uint8_t* buff, uint16_t buff_size);  /*!< 数据接收接口函数  */
+typedef void (*open_cmd_handler_t)(open_protocol_header_t *pack_desc, uint8_t src_port_idx);    /*!< 解包回调函数  */
+typedef void (*open_proto_send_port_t)(uint8_t* data, uint16_t data_size);                      /*!< 对外发送接口函数  */
+typedef uint16_t (*open_proto_recv_port_t)(uint8_t* buff, uint16_t buff_size);                  /*!< 数据接收接口函数  */
 
 
 /**
@@ -121,7 +121,7 @@ void open_proto_recv(void);
 
 int open_proto_send(uint16_t cmd_id, uint16_t dst_addr, uint8_t need_ack,
                      uint8_t* data, uint32_t data_len);
-int open_proto_ack(open_protocol_header_t* req_header,
+int open_proto_ack(open_protocol_header_t* req_header, uint8_t src_port_idx,
                   uint8_t* data, uint32_t data_len);
 
 int open_proto_port_add(char* name, open_proto_send_port_t send_port, open_proto_recv_port_t recv_port);

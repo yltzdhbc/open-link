@@ -17,7 +17,7 @@ static char local_hw_id[16] = {0};
 static uint8_t last_error = 0;
 static uint8_t upgrade_is_end = 0;
 
-static void upgrade_comm_ack(open_protocol_header_t *pack_desc, uint8_t error_code);
+static void upgrade_comm_ack(open_protocol_header_t *pack_desc, uint8_t src_port_idx, uint8_t error_code);
 
 void upgrade_init(uint16_t sn_crc16, char *hw_id)
 {
@@ -25,7 +25,7 @@ void upgrade_init(uint16_t sn_crc16, char *hw_id)
     strcpy(local_hw_id, hw_id);
 }
 
-void upgrade_info_pack_handle(open_protocol_header_t *pack_desc)
+void upgrade_info_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_cmd_upgrade_info_req *req = (open_cmd_upgrade_info_req *)(pack_desc->data);
 
@@ -40,21 +40,21 @@ void upgrade_info_pack_handle(open_protocol_header_t *pack_desc)
         uint32_t erase_bytes = UPGRADE_END_FLASH_ADDRESS - UPGRADE_START_FLASH_ADDRESS;
         if (pack_desc->data_len == sizeof(open_cmd_upgrade_info_req) && req->erase_bytes != 0)
         {
-            //erase_bytes = req->erase_bytes;
+            // erase_bytes = req->erase_bytes;
         }
 
         /* 判断固件大小和擦除大小是否在Flash范围内 */
         if ((req->fw_size > UPGRADE_END_FLASH_ADDRESS - UPGRADE_START_FLASH_ADDRESS) ||
             (req->erase_bytes > UPGRADE_END_FLASH_ADDRESS - UPGRADE_START_FLASH_ADDRESS))
         {
-            upgrade_comm_ack(pack_desc, OPEN_PROTO_OVERSIZE);
+            upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_OVERSIZE);
             return;
         }
 
         /* 仅支持非加密类型 */
         if (req->encrypt != 0)
         {
-            upgrade_comm_ack(pack_desc, OPEN_PROTO_INVALID_PARAM);
+            upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_INVALID_PARAM);
             return;
         }
 
@@ -63,7 +63,7 @@ void upgrade_info_pack_handle(open_protocol_header_t *pack_desc)
         /* 擦除Flash并将相关参数初始化 */
         if (FLASH_OK != flash_erase(UPGRADE_START_FLASH_ADDRESS, erase_bytes))
         {
-            upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
+            upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_FLASH_ERROR);
             /*重新设置看门狗的时间 -> 1.5s*/
             return;
         }
@@ -74,11 +74,11 @@ void upgrade_info_pack_handle(open_protocol_header_t *pack_desc)
         upgrade_is_end = 0;
         upgrade_status = UPGRADE_TRANS_FW_DATA;
 
-        upgrade_comm_ack(pack_desc, OPEN_PROTO_NORMAL);
+        upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_NORMAL);
     }
 }
 
-void upgrade_data_pack_handle(open_protocol_header_t *pack_desc)
+void upgrade_data_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_cmd_upgrade_data_req *req = (open_cmd_upgrade_data_req *)(pack_desc->data);
     uint32_t flash_write_num = MAX_SUPPORT_FW_PACK_SIZE;
@@ -88,14 +88,14 @@ void upgrade_data_pack_handle(open_protocol_header_t *pack_desc)
         /* 检查包序号和升级状态是否正确 */
         if (fw_pack_idx < req->pack_idx || upgrade_status != UPGRADE_TRANS_FW_DATA)
         {
-            upgrade_comm_ack(pack_desc, OPEN_PROTO_IDX_ERROR);
+            upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_IDX_ERROR);
             return;
         }
 
         /* 除了最后一个包，其他包长必须为MAX_SUPPORT_FW_PACK_SIZE */
         if (fw_size - flash_write_ptr > MAX_SUPPORT_FW_PACK_SIZE && req->pack_size != MAX_SUPPORT_FW_PACK_SIZE)
         {
-            upgrade_comm_ack(pack_desc, OPEN_PROTO_WRONG_LENGTH);
+            upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_WRONG_LENGTH);
             return;
         }
 
@@ -104,7 +104,7 @@ void upgrade_data_pack_handle(open_protocol_header_t *pack_desc)
         {
             if (FLASH_OK != flash_write(UPGRADE_START_FLASH_ADDRESS + flash_write_ptr, req->fw_data, req->pack_size))
             {
-                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
+                upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_FLASH_ERROR);
                 return;
             }
             flash_write_ptr += req->pack_size;
@@ -115,12 +115,12 @@ void upgrade_data_pack_handle(open_protocol_header_t *pack_desc)
             }
         }
 
-        upgrade_comm_ack(pack_desc, OPEN_PROTO_NORMAL);
+        upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_NORMAL);
         return;
     }
 }
 
-void upgrade_end_pack_handle(open_protocol_header_t *pack_desc)
+void upgrade_end_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_cmd_upgrade_end_req *req = (open_cmd_upgrade_end_req *)(pack_desc->data);
     uint32_t flash_write_num = MAX_SUPPORT_FW_PACK_SIZE;
@@ -132,7 +132,7 @@ void upgrade_end_pack_handle(open_protocol_header_t *pack_desc)
         /* 检查包序号和升级状态是否正确 */
         if (upgrade_status != UPGRADE_WAIT_END)
         {
-            upgrade_comm_ack(pack_desc, OPEN_PROTO_IDX_ERROR);
+            upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_IDX_ERROR);
             return;
         }
 
@@ -140,35 +140,35 @@ void upgrade_end_pack_handle(open_protocol_header_t *pack_desc)
         // md5_init
         // md5_update
         // md5_final
-//        if (memcmp(fw_md5, req->md5, 16) != 0)
-//        {
-//            upgrade_comm_ack(pack_desc, OPEN_PROTO_VERIFY_FAIL);
-//            return;
-//        }
+        //        if (memcmp(fw_md5, req->md5, 16) != 0)
+        //        {
+        //            upgrade_comm_ack(pack_desc, OPEN_PROTO_VERIFY_FAIL);
+        //            return;
+        //        }
 
         // 写入系统参数
-//        if (!upgrade_is_end)
-//        {
-//            if (SYS_PARAM_OK != sys_params_read())
-//            {
-//                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
-//                return;
-//            }
+        //        if (!upgrade_is_end)
+        //        {
+        //            if (SYS_PARAM_OK != sys_params_read())
+        //            {
+        //                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
+        //                return;
+        //            }
 
-//            memcpy(g_sys_params.app_md5, req->md5, 16);
-//            g_sys_params.app_size = fw_size;
+        //            memcpy(g_sys_params.app_md5, req->md5, 16);
+        //            g_sys_params.app_size = fw_size;
 
-//            if (SYS_PARAM_OK != sys_params_save())
-//            {
-//                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
-//                return;
-//            }
-//        }
+        //            if (SYS_PARAM_OK != sys_params_save())
+        //            {
+        //                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
+        //                return;
+        //            }
+        //        }
 
         upgrade_is_end = 1;
-//        g_app_start = 1;
+        //        g_app_start = 1;
 
-        upgrade_comm_ack(pack_desc, OPEN_PROTO_NORMAL);
+        upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_NORMAL);
         return;
     }
 }
@@ -194,7 +194,7 @@ int upgrade_check_app(uint8_t *app_md5, uint32_t app_size)
     return 0;
 }
 
-static void upgrade_comm_ack(open_protocol_header_t *pack_desc, uint8_t error_code)
+static void upgrade_comm_ack(open_protocol_header_t *pack_desc, uint8_t src_port_idx, uint8_t error_code)
 {
     open_cmd_upgrade_comm_rsp_t rsp;
     rsp.err_code = error_code;
@@ -202,7 +202,7 @@ static void upgrade_comm_ack(open_protocol_header_t *pack_desc, uint8_t error_co
 
     if (pack_desc->need_ack)
     {
-        open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
+        open_proto_ack(pack_desc, src_port_idx, (uint8_t *)(&rsp), sizeof(rsp));
     }
     return;
 }

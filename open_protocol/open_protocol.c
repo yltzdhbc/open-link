@@ -50,7 +50,7 @@ static open_proto_port_t open_port[OPEN_PROTOCO_PORT_NUM_MAX];
 static open_proto_route_t open_s_router_rule[OPEN_PROTOCO_ROUTE_NUM_MAX];
 
 /* Private function prototypes -----------------------------------------------*/
-static void handle_process(open_protocol_header_t* pack);
+static void handle_process(open_protocol_header_t* pack, uint8_t src_port_idx);
 static void open_proto_route(open_protocol_header_t* pack, uint8_t src_port_idx);
 static void open_proto_unpack(uint8_t* data, uint32_t len, uint8_t port_idx);
 
@@ -157,7 +157,7 @@ int open_proto_send(uint16_t cmd_id, uint16_t dst_addr, uint8_t need_ack,
  * @param data_len
  * @return int
  */
-int open_proto_ack(open_protocol_header_t* req_header,
+int open_proto_ack(open_protocol_header_t* req_header, uint8_t src_port_idx,
                   uint8_t* data, uint32_t data_len)
 {
     if(data_len > OPEN_PROTOCOL_DATA_MAX_BYTE)
@@ -191,8 +191,8 @@ int open_proto_ack(open_protocol_header_t* req_header,
 
     // open_proto_route(header, OPEN_PROTOCOL_LOCAL_PORT);
 
-    // ACK修改为直接回复来源端口
-    open_port[header->port_idx].send_port((uint8_t*)header, (header->data_len + OPEN_PROTOCOL_NON_DATA_SIZE));
+    // ACK直接回复来源端口
+    open_port[src_port_idx].send_port((uint8_t*)header, (header->data_len + OPEN_PROTOCOL_NON_DATA_SIZE));
 
     return 0;
 }
@@ -322,7 +322,7 @@ int open_proto_handle_reg(uint32_t cmd_id, open_cmd_handler_t p_fun)
  *
  * @param pack
  */
-static void handle_process(open_protocol_header_t* pack)
+static void handle_process(open_protocol_header_t* pack, uint8_t src_port_idx)
 {
     uint8_t have_cmd_id = 0;
     for(int i = 0; i < open_handle_kv_nbr; i++)
@@ -330,12 +330,12 @@ static void handle_process(open_protocol_header_t* pack)
         if(pack->cmd_id == open_handle_kv[i].cmd_id)
         {
             have_cmd_id = 1;
-            open_handle_kv[i].p_fun(pack);
+            open_handle_kv[i].p_fun(pack, src_port_idx);
         }
 
         if(open_handle_kv[i].cmd_id == 0xFFFF)
         {
-            open_handle_kv[i].p_fun(pack);
+            open_handle_kv[i].p_fun(pack, src_port_idx);
         }
     }
 
@@ -345,7 +345,7 @@ static void handle_process(open_protocol_header_t* pack)
         {
             if(open_handle_kv[i].cmd_id == 0xFFFE)
             {
-                open_handle_kv[i].p_fun(pack);
+                open_handle_kv[i].p_fun(pack, src_port_idx);
             }
         }
     }
@@ -477,13 +477,11 @@ static void open_proto_unpack(uint8_t* data, uint32_t len, uint8_t port_idx)
                     if((crc16_checksum_get((uint8_t*)(header), sizeof(open_protocol_header_t) + header->data_len, OPEN_PROTOCOL_CRC16_INIT) == tail_crc) ||
                         (!OPEN_PROTOCOL_USE_CRC))
                     {
-                        header->port_idx = port_idx;
-
                         /* 包数据全部解析成功*/
                         if((header->dst_addr == OPEN_PROTOCOL_LOCAL_ADDR) || (header->dst_addr == g_local_addr))
                         {
-                            /* 接收地址匹配本机，跳转对应回调处理 */
-                            handle_process(header);
+                            /* 接收地址匹配本机，跳转对应回调处理, 增加来源端口参数 */
+                            handle_process(header, port_idx);
                         }
                         else if(header->dst_addr == OPEN_PROTOCOL_BOARDCAST_ADDR)
                         {
@@ -491,7 +489,7 @@ static void open_proto_unpack(uint8_t* data, uint32_t len, uint8_t port_idx)
 #if OPEN_PROTOCOL_ROUTER_ENABLE == 1
                             open_proto_route(header, port_idx);
 #endif
-                            handle_process(header);
+                            handle_process(header, port_idx);
 
                         }
                         else
