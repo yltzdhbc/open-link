@@ -35,25 +35,26 @@
  *
  * @param pack_desc
  */
-void open_cmd_reboot(open_protocol_header_t *pack_desc)
+void open_cmd_reboot(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_cmd_version_rsp_t rsp;
     if (pack_desc->is_ack == 0)
     {
         if (pack_desc->need_ack)
         {
-            open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
+            open_proto_ack(pack_desc, src_port_idx, (uint8_t *)(&rsp), sizeof(rsp));
         }
         mcu_software_reset();
     }
 }
 
+uint8_t test_send_cnt = 0;
 /**
  * @brief 查询版本
  *
  * @param pack_desc
  */
-void open_cmd_ver(open_protocol_header_t *pack_desc)
+void open_cmd_ver(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_cmd_version_rsp_t rsp;
     if (pack_desc->is_ack == 0)
@@ -65,7 +66,8 @@ void open_cmd_ver(open_protocol_header_t *pack_desc)
             rsp.app_ver = APP_VERSION;
             // memcpy(rsp.hw_id, HW_VER_ID, sizeof(HW_VER_ID));
             memcpy(rsp.hw_id, g_sn, sizeof(g_sn));
-            open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
+            open_proto_ack(pack_desc, src_port_idx, (uint8_t *)(&rsp), sizeof(rsp));
+			test_send_cnt++;
         }
     }
 }
@@ -75,7 +77,7 @@ void open_cmd_ver(open_protocol_header_t *pack_desc)
  *
  * @param pack_desc
  */
-void open_cmd_echo(open_protocol_header_t *pack_desc)
+void open_cmd_echo(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_cmd_echo_rsp_t rsp;
     if (pack_desc->is_ack == 0)
@@ -85,7 +87,7 @@ void open_cmd_echo(open_protocol_header_t *pack_desc)
             rsp.error = 0;
             extern uint16_t g_sn_crc16;
             rsp.sn_crc16 = g_sn_crc16;
-            open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
+            open_proto_ack(pack_desc, src_port_idx, (uint8_t *)(&rsp), sizeof(rsp));
         }
     }
 }
@@ -95,7 +97,7 @@ void open_cmd_echo(open_protocol_header_t *pack_desc)
  *
  * @param pack_desc
  */
-void open_cmd_enter_loader(open_protocol_header_t *pack_desc)
+void open_cmd_enter_loader(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_comm_rsp_t rsp;
     if (pack_desc->is_ack == 0)
@@ -103,7 +105,7 @@ void open_cmd_enter_loader(open_protocol_header_t *pack_desc)
         if (pack_desc->need_ack)
         {
             rsp.err_code = 0;
-            open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
+            open_proto_ack(pack_desc, src_port_idx, (uint8_t *)(&rsp), sizeof(rsp));
         }
 
         OPEN_PROTOCOL_DELAY(50);
@@ -118,7 +120,7 @@ void open_cmd_enter_loader(open_protocol_header_t *pack_desc)
  *
  * @param pack_desc
  */
-void open_cmd_stop_boot_app(open_protocol_header_t *pack_desc)
+void open_cmd_stop_boot_app(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_comm_rsp_t rsp;
     if (pack_desc->is_ack == 0)
@@ -126,7 +128,7 @@ void open_cmd_stop_boot_app(open_protocol_header_t *pack_desc)
         if (pack_desc->need_ack)
         {
             rsp.err_code = 0;
-            open_proto_ack(pack_desc, (uint8_t *)(&rsp), sizeof(rsp));
+            open_proto_ack(pack_desc, src_port_idx, (uint8_t *)(&rsp), sizeof(rsp));
         }
         /* user function */
         mcu_reset_stop_app_flag();

@@ -153,24 +153,24 @@ typedef struct
 
 #pragma pack(pop)
 
-void open_cmd_default(open_protocol_header_t *pack_desc);
-void open_cmd_reboot(open_protocol_header_t *pack_desc);
-void open_cmd_ver(open_protocol_header_t *pack_desc);
-void open_cmd_echo(open_protocol_header_t *pack_desc);
-void open_cmd_set_id(open_protocol_header_t *pack_desc);
-void open_cmd_enter_loader(open_protocol_header_t *pack_desc);
-void open_cmd_led_test(open_protocol_header_t *pack_desc);
-void open_cmd_sd_card_test(open_protocol_header_t *pack_desc);
-void open_cmd_can_test(open_protocol_header_t *pack_desc);
-void open_cmd_slot14_test(open_protocol_header_t *pack_desc);
-void open_cmd_slot100_test(open_protocol_header_t *pack_desc);
-void open_cmd_en_ai_board_img(open_protocol_header_t *pack_desc);
-void open_cmd_burn_sn(open_protocol_header_t *pack_desc);
+void open_cmd_default(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_reboot(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_ver(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_echo(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_set_id(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_enter_loader(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_led_test(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_sd_card_test(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_can_test(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_slot14_test(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_slot100_test(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_en_ai_board_img(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_burn_sn(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
 
-void open_cmd_v1_ver(open_protocol_header_t *pack_desc);
+void open_cmd_v1_ver(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
 
-int get_proxy_common_idx(uint16_t ext_cmd);
-void open_cmd_proxy_common(open_protocol_header_t *pack_desc);
-void open_cmd_stop_boot_app(open_protocol_header_t *pack_desc);
+int get_proxy_common_idx(uint16_t ext_cmd, uint8_t src_port_idx);
+void open_cmd_proxy_common(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
+void open_cmd_stop_boot_app(open_protocol_header_t *pack_desc, uint8_t src_port_idx);
 
 #endif
