@@ -10,18 +10,20 @@
 #include "open_protocol.h"
 #include "open_protocol_cmd.h"
 #include "open_protocol_error.h"
+#include "cfg.h"
 
 #ifdef STM32F407xx
 #include "stm32f4xx.h"
 #include "stm32f407_bsp_mcu.h"
+#include "stm32f407_bsp_flash.h"
 #else
 #include "gd32f425_bsp_mcu.h"
 #include "systick.h"
 #endif
 
-#define APP_VERSION (0X0101000D)
-#define LOADER_VERSION (0X01010000)
-#define HW_VER_ID "target_v2.0.1"
+// #define APP_VERSION (0X0101000D)
+// #define LOADER_VERSION (0X01010000)
+// #define HW_VER_ID "target_v2.0.1"
 
 #ifdef STM32F407xx
 #define OPEN_PROTOCOL_DELAY(ms) HAL_Delay(ms)
@@ -61,9 +63,10 @@ void open_cmd_ver(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
     {
         if (pack_desc->need_ack)
         {
-            rsp.loader_ver = LOADER_VERSION;
+            rsp.loader_ver = g_sys_params.loader_ver;
+            rsp.app_ver = g_sys_params.app_ver;
             memcpy(rsp.sn, g_sn, sizeof(g_sn));
-            rsp.app_ver = APP_VERSION;
+            // rsp.app_ver = APP_VERSION;
             // memcpy(rsp.hw_id, HW_VER_ID, sizeof(HW_VER_ID));
             memcpy(rsp.hw_id, g_sn, sizeof(g_sn));
             open_proto_ack(pack_desc, src_port_idx, (uint8_t *)(&rsp), sizeof(rsp));
