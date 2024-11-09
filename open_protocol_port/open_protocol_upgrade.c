@@ -1,4 +1,5 @@
 #include "open_protocol_upgrade.h"
+#include "md5.h"
 
 #ifdef STM32F407xx
 #include "stm32f407_bsp_flash.h"
@@ -81,7 +82,6 @@ void upgrade_info_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_por
 void upgrade_data_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_cmd_upgrade_data_req *req = (open_cmd_upgrade_data_req *)(pack_desc->data);
-    uint32_t flash_write_num = MAX_SUPPORT_FW_PACK_SIZE;
 
     if (pack_desc->is_ack == 0 && req->sn_crc16 == local_sn_crc16)
     {
@@ -123,9 +123,7 @@ void upgrade_data_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_por
 void upgrade_end_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port_idx)
 {
     open_cmd_upgrade_end_req *req = (open_cmd_upgrade_end_req *)(pack_desc->data);
-    uint32_t flash_write_num = MAX_SUPPORT_FW_PACK_SIZE;
-    uint8_t fw_md5[16];
-    // MD5_CTX md5_ctx;
+    MD5Context md5_ctx;
 
     if (pack_desc->is_ack == 0 && req->sn_crc16 == local_sn_crc16)
     {
@@ -136,37 +134,40 @@ void upgrade_end_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port
             return;
         }
 
+        __disable_irq();
         // 计算MD5进行对比
-        // md5_init
-        // md5_update
-        // md5_final
-        //        if (memcmp(fw_md5, req->md5, 16) != 0)
-        //        {
-        //            upgrade_comm_ack(pack_desc, OPEN_PROTO_VERIFY_FAIL);
-        //            return;
-        //        }
+        md5Init(&md5_ctx);
+        // Flash 中的App起始地址开始读取
+        unsigned char *firmware_addr = (unsigned char *)UPGRADE_START_FLASH_ADDRESS;
+        md5Update(&md5_ctx, firmware_addr, fw_size);
+        // 计算并获取最终的 MD5 哈希值
+        md5Finalize(&md5_ctx);
+        __enable_irq();
+
+        if (memcmp(md5_ctx.digest, req->md5, 16) != 0)
+        {
+            upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_VERIFY_FAIL);
+            return;
+        }
 
         // 写入系统参数
-        //        if (!upgrade_is_end)
-        //        {
-        //            if (SYS_PARAM_OK != sys_params_read())
-        //            {
-        //                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
-        //                return;
-        //            }
+        // if (!upgrade_is_end)
 
-        //            memcpy(g_sys_params.app_md5, req->md5, 16);
-        //            g_sys_params.app_size = fw_size;
+        if (SYS_PARAM_OK != sys_params_read())
+        {
+            upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_FLASH_ERROR);
+            return;
+        }
+        memcpy(g_sys_params.app_md5, req->md5, 16);
+        g_sys_params.app_size = fw_size;
+        if (SYS_PARAM_OK != sys_params_save())
+        {
+            upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_FLASH_ERROR);
+            return;
+        }
 
-        //            if (SYS_PARAM_OK != sys_params_save())
-        //            {
-        //                upgrade_comm_ack(pack_desc, OPEN_PROTO_FLASH_ERROR);
-        //                return;
-        //            }
-        //        }
-
-        upgrade_is_end = 1;
-        //        g_app_start = 1;
+        // upgrade_is_end = 1;
+        // g_app_start = 1;
 
         upgrade_comm_ack(pack_desc, src_port_idx, OPEN_PROTO_NORMAL);
         return;
@@ -175,22 +176,6 @@ void upgrade_end_pack_handle(open_protocol_header_t *pack_desc, uint8_t src_port
 
 int upgrade_check_app(uint8_t *app_md5, uint32_t app_size)
 {
-    // uint8_t md5[16];
-    // // MD5_CTX md5_ctx;
-    // if (app_size > UPGRADE_END_FLASH_ADDRESS - UPGRADE_START_FLASH_ADDRESS)
-    // {
-    //     return OPEN_PROTO_VERIFY_FAIL;
-    // }
-
-    // // md5_init
-    // // md5_update
-    // // md5_final
-
-    // if (memcmp(md5, app_md5, 16) != 0)
-    // {
-    //     return OPEN_PROTO_VERIFY_FAIL;
-    // }
-
     return 0;
 }
 

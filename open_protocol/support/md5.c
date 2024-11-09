@@ -1,279 +1,237 @@
+/*
+ * Derived from the RSA Data Security, Inc. MD5 Message-Digest Algorithm
+ * and modified slightly to be functionally identical but condensed into control structures.
+ */
+
 #include "md5.h"
-#include <string.h>
 
 /*
- ***********************************************************************
- **  Message-digest routines:                                         **
- **  To form the message digest for a message M                       **
- **    (1) Initialize a context buffer mdContext using MD5Init        **
- **    (2) Call MD5Update on mdContext and M                          **
- **    (3) Call MD5Final on mdContext                                 **
- **  The message digest is now in mdContext->digest[0...15]           **
- ***********************************************************************
+ * Constants defined by the MD5 algorithm
  */
+#define A 0x67452301
+#define B 0xefcdab89
+#define C 0x98badcfe
+#define D 0x10325476
 
-/* forward declaration */
-static void Transform(uint32_t *buf, uint32_t *in);
+static uint32_t S[] = {7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22,
+                       5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20,
+                       4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23,
+                       6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21};
 
-static unsigned char PADDING[64] = {
-    0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+static uint32_t K[] = {0xd76aa478, 0xe8c7b756, 0x242070db, 0xc1bdceee,
+                       0xf57c0faf, 0x4787c62a, 0xa8304613, 0xfd469501,
+                       0x698098d8, 0x8b44f7af, 0xffff5bb1, 0x895cd7be,
+                       0x6b901122, 0xfd987193, 0xa679438e, 0x49b40821,
+                       0xf61e2562, 0xc040b340, 0x265e5a51, 0xe9b6c7aa,
+                       0xd62f105d, 0x02441453, 0xd8a1e681, 0xe7d3fbc8,
+                       0x21e1cde6, 0xc33707d6, 0xf4d50d87, 0x455a14ed,
+                       0xa9e3e905, 0xfcefa3f8, 0x676f02d9, 0x8d2a4c8a,
+                       0xfffa3942, 0x8771f681, 0x6d9d6122, 0xfde5380c,
+                       0xa4beea44, 0x4bdecfa9, 0xf6bb4b60, 0xbebfbc70,
+                       0x289b7ec6, 0xeaa127fa, 0xd4ef3085, 0x04881d05,
+                       0xd9d4d039, 0xe6db99e5, 0x1fa27cf8, 0xc4ac5665,
+                       0xf4292244, 0x432aff97, 0xab9423a7, 0xfc93a039,
+                       0x655b59c3, 0x8f0ccc92, 0xffeff47d, 0x85845dd1,
+                       0x6fa87e4f, 0xfe2ce6e0, 0xa3014314, 0x4e0811a1,
+                       0xf7537e82, 0xbd3af235, 0x2ad7d2bb, 0xeb86d391};
 
-/* F, G, H and I are basic MD5 functions */
-#define F(x, y, z) (((x) & (y)) | ((~x) & (z)))
-#define G(x, y, z) (((x) & (z)) | ((y) & (~z)))
-#define H(x, y, z) ((x) ^ (y) ^ (z))
-#define I(x, y, z) ((y) ^ ((x) | (~z)))
-
-/* ROTATE_LEFT rotates x left n bits */
-#define ROTATE_LEFT(x, n) (((x) << (n)) | ((x) >> (32 - (n))))
-
-/* FF, GG, HH, and II transformations for rounds 1, 2, 3, and 4 */
-/* Rotation is separate from addition to prevent recomputation */
-#define FF(a, b, c, d, x, s, ac)                    \
-  {                                                 \
-    (a) += F((b), (c), (d)) + (x) + (uint32_t)(ac); \
-    (a) = ROTATE_LEFT((a), (s));                    \
-    (a) += (b);                                     \
-  }
-#define GG(a, b, c, d, x, s, ac)                    \
-  {                                                 \
-    (a) += G((b), (c), (d)) + (x) + (uint32_t)(ac); \
-    (a) = ROTATE_LEFT((a), (s));                    \
-    (a) += (b);                                     \
-  }
-#define HH(a, b, c, d, x, s, ac)                    \
-  {                                                 \
-    (a) += H((b), (c), (d)) + (x) + (uint32_t)(ac); \
-    (a) = ROTATE_LEFT((a), (s));                    \
-    (a) += (b);                                     \
-  }
-#define II(a, b, c, d, x, s, ac)                    \
-  {                                                 \
-    (a) += I((b), (c), (d)) + (x) + (uint32_t)(ac); \
-    (a) = ROTATE_LEFT((a), (s));                    \
-    (a) += (b);                                     \
-  }
-
-#ifdef __STDC__
-#define UL(x) x##UL
-#else
-#ifdef WIN32
-#define UL(x) x##UL
-#else
-#define UL(x) x
-#endif
-#endif
-
-/* The routine MD5Init initializes the message-digest context
-   mdContext. All fields are set to zero.
+/*
+ * Padding used to make the size (in bits) of the input congruent to 448 mod 512
  */
-void MD5Init(MD5_CTX *mdContext)
+static uint8_t PADDING[] = {0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+
+/*
+ * Bit-manipulation functions defined by the MD5 algorithm
+ */
+#define F(X, Y, Z) ((X & Y) | (~X & Z))
+#define G(X, Y, Z) ((X & Z) | (Y & ~Z))
+#define H(X, Y, Z) (X ^ Y ^ Z)
+#define I(X, Y, Z) (Y ^ (X | ~Z))
+
+/*
+ * Rotates a 32-bit word left by n bits
+ */
+uint32_t rotateLeft(uint32_t x, uint32_t n)
 {
-  mdContext->i[0] = mdContext->i[1] = (uint32_t)0;
-
-  /* Load magic initialization constants. */
-  mdContext->buf[0] = (uint32_t)0x67452301UL;
-  mdContext->buf[1] = (uint32_t)0xefcdab89UL;
-  mdContext->buf[2] = (uint32_t)0x98badcfeUL;
-  mdContext->buf[3] = (uint32_t)0x10325476UL;
+  return (x << n) | (x >> (32 - n));
 }
 
-/* The routine MD5Update updates the message-digest context to
-   account for the presence of each of the characters inBuf[0..inLen-1]
-   in the message whose digest is being computed.
+/*
+ * Initialize a context
  */
-void MD5Update(MD5_CTX *mdContext, unsigned char *inBuf, unsigned int inLen)
+void md5Init(MD5Context *ctx)
 {
-  uint32_t in[16];
-  int mdi;
-  unsigned int i, ii;
+  ctx->size = (uint64_t)0;
 
-#if 0
-  PPPDEBUG(LOG_INFO, ("MD5Update: %u:%.*H\n", inLen, LWIP_MIN(inLen, 20) * 2, inBuf));
-  PPPDEBUG(LOG_INFO, ("MD5Update: %u:%s\n", inLen, inBuf));
-#endif
+  ctx->buffer[0] = (uint32_t)A;
+  ctx->buffer[1] = (uint32_t)B;
+  ctx->buffer[2] = (uint32_t)C;
+  ctx->buffer[3] = (uint32_t)D;
+}
 
-  /* compute number of bytes mod 64 */
-  mdi = (int)((mdContext->i[0] >> 3) & 0x3F);
+/*
+ * Add some amount of input to the context
+ *
+ * If the input fills out a block of 512 bits, apply the algorithm (md5Step)
+ * and save the result in the buffer. Also updates the overall size.
+ */
+void md5Update(MD5Context *ctx, uint8_t *input_buffer, size_t input_len)
+{
+  uint32_t input[16];
+  unsigned int offset = ctx->size % 64;
+  ctx->size += (uint64_t)input_len;
 
-  /* update number of bits */
-  if ((mdContext->i[0] + ((uint32_t)inLen << 3)) < mdContext->i[0])
+  // Copy each byte in input_buffer into the next space in our context input
+  for (unsigned int i = 0; i < input_len; ++i)
   {
-    mdContext->i[1]++;
-  }
-  mdContext->i[0] += ((uint32_t)inLen << 3);
-  mdContext->i[1] += ((uint32_t)inLen >> 29);
+    ctx->input[offset++] = (uint8_t) * (input_buffer + i);
 
-  while (inLen--)
-  {
-    /* add new character to buffer, increment mdi */
-    mdContext->in[mdi++] = *inBuf++;
-
-    /* transform if necessary */
-    if (mdi == 0x40)
+    // If we've filled our context input, copy it into our local array input
+    // then reset the offset to 0 and fill in a new buffer.
+    // Every time we fill out a chunk, we run it through the algorithm
+    // to enable some back and forth between cpu and i/o
+    if (offset % 64 == 0)
     {
-      for (i = 0, ii = 0; i < 16; i++, ii += 4)
+      for (unsigned int j = 0; j < 16; ++j)
       {
-        in[i] = (((uint32_t)mdContext->in[ii + 3]) << 24) |
-                (((uint32_t)mdContext->in[ii + 2]) << 16) |
-                (((uint32_t)mdContext->in[ii + 1]) << 8) |
-                ((uint32_t)mdContext->in[ii]);
+        // Convert to little-endian
+        // The local variable `input` our 512-bit chunk separated into 32-bit words
+        // we can use in calculations
+        input[j] = (uint32_t)(ctx->input[(j * 4) + 3]) << 24 |
+                   (uint32_t)(ctx->input[(j * 4) + 2]) << 16 |
+                   (uint32_t)(ctx->input[(j * 4) + 1]) << 8 |
+                   (uint32_t)(ctx->input[(j * 4)]);
       }
-      Transform(mdContext->buf, in);
-      mdi = 0;
+      md5Step(ctx->buffer, input);
+      offset = 0;
     }
   }
 }
 
-/* The routine MD5Final terminates the message-digest computation and
-   ends with the desired message digest in mdContext->digest[0...15].
+/*
+ * Pad the current input to get to 448 bytes, append the size in bits to the very end,
+ * and save the result of the final iteration into digest.
  */
-void MD5Final(unsigned char hash[], MD5_CTX *mdContext)
+void md5Finalize(MD5Context *ctx)
 {
-  uint32_t in[16];
-  int mdi;
-  unsigned int i, ii;
-  unsigned int padLen;
+  uint32_t input[16];
+  unsigned int offset = ctx->size % 64;
+  unsigned int padding_length = offset < 56 ? 56 - offset : (56 + 64) - offset;
 
-  /* save number of bits */
-  in[14] = mdContext->i[0];
-  in[15] = mdContext->i[1];
+  // Fill in the padding and undo the changes to size that resulted from the update
+  md5Update(ctx, PADDING, padding_length);
+  ctx->size -= (uint64_t)padding_length;
 
-  /* compute number of bytes mod 64 */
-  mdi = (int)((mdContext->i[0] >> 3) & 0x3F);
-
-  /* pad out to 56 mod 64 */
-  padLen = (mdi < 56) ? (56 - mdi) : (120 - mdi);
-  MD5Update(mdContext, PADDING, padLen);
-
-  /* append length in bits and transform */
-  for (i = 0, ii = 0; i < 14; i++, ii += 4)
+  // Do a final update (internal to this function)
+  // Last two 32-bit words are the two halves of the size (converted from bytes to bits)
+  for (unsigned int j = 0; j < 14; ++j)
   {
-    in[i] = (((uint32_t)mdContext->in[ii + 3]) << 24) |
-            (((uint32_t)mdContext->in[ii + 2]) << 16) |
-            (((uint32_t)mdContext->in[ii + 1]) << 8) |
-            ((uint32_t)mdContext->in[ii]);
+    input[j] = (uint32_t)(ctx->input[(j * 4) + 3]) << 24 |
+               (uint32_t)(ctx->input[(j * 4) + 2]) << 16 |
+               (uint32_t)(ctx->input[(j * 4) + 1]) << 8 |
+               (uint32_t)(ctx->input[(j * 4)]);
   }
-  Transform(mdContext->buf, in);
+  input[14] = (uint32_t)(ctx->size * 8);
+  input[15] = (uint32_t)((ctx->size * 8) >> 32);
 
-  /* store buffer in digest */
-  for (i = 0, ii = 0; i < 4; i++, ii += 4)
+  md5Step(ctx->buffer, input);
+
+  // Move the result into digest (convert from little-endian)
+  for (unsigned int i = 0; i < 4; ++i)
   {
-    mdContext->digest[ii] = (unsigned char)(mdContext->buf[i] & 0xFF);
-    mdContext->digest[ii + 1] =
-        (unsigned char)((mdContext->buf[i] >> 8) & 0xFF);
-    mdContext->digest[ii + 2] =
-        (unsigned char)((mdContext->buf[i] >> 16) & 0xFF);
-    mdContext->digest[ii + 3] =
-        (unsigned char)((mdContext->buf[i] >> 24) & 0xFF);
+    ctx->digest[(i * 4) + 0] = (uint8_t)((ctx->buffer[i] & 0x000000FF));
+    ctx->digest[(i * 4) + 1] = (uint8_t)((ctx->buffer[i] & 0x0000FF00) >> 8);
+    ctx->digest[(i * 4) + 2] = (uint8_t)((ctx->buffer[i] & 0x00FF0000) >> 16);
+    ctx->digest[(i * 4) + 3] = (uint8_t)((ctx->buffer[i] & 0xFF000000) >> 24);
   }
-  SMEMCPY(hash, mdContext->digest, 16);
 }
 
-/* Basic MD5 step. Transforms buf based on in.
+/*
+ * Step on 512 bits of input with the main MD5 algorithm.
  */
-static void
-Transform(uint32_t *buf, uint32_t *in)
+void md5Step(uint32_t *buffer, uint32_t *input)
 {
-  uint32_t a = buf[0], b = buf[1], c = buf[2], d = buf[3];
+  uint32_t AA = buffer[0];
+  uint32_t BB = buffer[1];
+  uint32_t CC = buffer[2];
+  uint32_t DD = buffer[3];
 
-  /* Round 1 */
-#define S11 7
-#define S12 12
-#define S13 17
-#define S14 22
-  FF(a, b, c, d, in[0], S11, UL(3614090360));  /* 1 */
-  FF(d, a, b, c, in[1], S12, UL(3905402710));  /* 2 */
-  FF(c, d, a, b, in[2], S13, UL(606105819));   /* 3 */
-  FF(b, c, d, a, in[3], S14, UL(3250441966));  /* 4 */
-  FF(a, b, c, d, in[4], S11, UL(4118548399));  /* 5 */
-  FF(d, a, b, c, in[5], S12, UL(1200080426));  /* 6 */
-  FF(c, d, a, b, in[6], S13, UL(2821735955));  /* 7 */
-  FF(b, c, d, a, in[7], S14, UL(4249261313));  /* 8 */
-  FF(a, b, c, d, in[8], S11, UL(1770035416));  /* 9 */
-  FF(d, a, b, c, in[9], S12, UL(2336552879));  /* 10 */
-  FF(c, d, a, b, in[10], S13, UL(4294925233)); /* 11 */
-  FF(b, c, d, a, in[11], S14, UL(2304563134)); /* 12 */
-  FF(a, b, c, d, in[12], S11, UL(1804603682)); /* 13 */
-  FF(d, a, b, c, in[13], S12, UL(4254626195)); /* 14 */
-  FF(c, d, a, b, in[14], S13, UL(2792965006)); /* 15 */
-  FF(b, c, d, a, in[15], S14, UL(1236535329)); /* 16 */
+  uint32_t E;
 
-  /* Round 2 */
-#define S21 5
-#define S22 9
-#define S23 14
-#define S24 20
-  GG(a, b, c, d, in[1], S21, UL(4129170786));  /* 17 */
-  GG(d, a, b, c, in[6], S22, UL(3225465664));  /* 18 */
-  GG(c, d, a, b, in[11], S23, UL(643717713));  /* 19 */
-  GG(b, c, d, a, in[0], S24, UL(3921069994));  /* 20 */
-  GG(a, b, c, d, in[5], S21, UL(3593408605));  /* 21 */
-  GG(d, a, b, c, in[10], S22, UL(38016083));   /* 22 */
-  GG(c, d, a, b, in[15], S23, UL(3634488961)); /* 23 */
-  GG(b, c, d, a, in[4], S24, UL(3889429448));  /* 24 */
-  GG(a, b, c, d, in[9], S21, UL(568446438));   /* 25 */
-  GG(d, a, b, c, in[14], S22, UL(3275163606)); /* 26 */
-  GG(c, d, a, b, in[3], S23, UL(4107603335));  /* 27 */
-  GG(b, c, d, a, in[8], S24, UL(1163531501));  /* 28 */
-  GG(a, b, c, d, in[13], S21, UL(2850285829)); /* 29 */
-  GG(d, a, b, c, in[2], S22, UL(4243563512));  /* 30 */
-  GG(c, d, a, b, in[7], S23, UL(1735328473));  /* 31 */
-  GG(b, c, d, a, in[12], S24, UL(2368359562)); /* 32 */
+  unsigned int j;
 
-  /* Round 3 */
-#define S31 4
-#define S32 11
-#define S33 16
-#define S34 23
-  HH(a, b, c, d, in[5], S31, UL(4294588738));  /* 33 */
-  HH(d, a, b, c, in[8], S32, UL(2272392833));  /* 34 */
-  HH(c, d, a, b, in[11], S33, UL(1839030562)); /* 35 */
-  HH(b, c, d, a, in[14], S34, UL(4259657740)); /* 36 */
-  HH(a, b, c, d, in[1], S31, UL(2763975236));  /* 37 */
-  HH(d, a, b, c, in[4], S32, UL(1272893353));  /* 38 */
-  HH(c, d, a, b, in[7], S33, UL(4139469664));  /* 39 */
-  HH(b, c, d, a, in[10], S34, UL(3200236656)); /* 40 */
-  HH(a, b, c, d, in[13], S31, UL(681279174));  /* 41 */
-  HH(d, a, b, c, in[0], S32, UL(3936430074));  /* 42 */
-  HH(c, d, a, b, in[3], S33, UL(3572445317));  /* 43 */
-  HH(b, c, d, a, in[6], S34, UL(76029189));    /* 44 */
-  HH(a, b, c, d, in[9], S31, UL(3654602809));  /* 45 */
-  HH(d, a, b, c, in[12], S32, UL(3873151461)); /* 46 */
-  HH(c, d, a, b, in[15], S33, UL(530742520));  /* 47 */
-  HH(b, c, d, a, in[2], S34, UL(3299628645));  /* 48 */
+  for (unsigned int i = 0; i < 64; ++i)
+  {
+    switch (i / 16)
+    {
+    case 0:
+      E = F(BB, CC, DD);
+      j = i;
+      break;
+    case 1:
+      E = G(BB, CC, DD);
+      j = ((i * 5) + 1) % 16;
+      break;
+    case 2:
+      E = H(BB, CC, DD);
+      j = ((i * 3) + 5) % 16;
+      break;
+    default:
+      E = I(BB, CC, DD);
+      j = (i * 7) % 16;
+      break;
+    }
 
-  /* Round 4 */
-#define S41 6
-#define S42 10
-#define S43 15
-#define S44 21
-  II(a, b, c, d, in[0], S41, UL(4096336452));  /* 49 */
-  II(d, a, b, c, in[7], S42, UL(1126891415));  /* 50 */
-  II(c, d, a, b, in[14], S43, UL(2878612391)); /* 51 */
-  II(b, c, d, a, in[5], S44, UL(4237533241));  /* 52 */
-  II(a, b, c, d, in[12], S41, UL(1700485571)); /* 53 */
-  II(d, a, b, c, in[3], S42, UL(2399980690));  /* 54 */
-  II(c, d, a, b, in[10], S43, UL(4293915773)); /* 55 */
-  II(b, c, d, a, in[1], S44, UL(2240044497));  /* 56 */
-  II(a, b, c, d, in[8], S41, UL(1873313359));  /* 57 */
-  II(d, a, b, c, in[15], S42, UL(4264355552)); /* 58 */
-  II(c, d, a, b, in[6], S43, UL(2734768916));  /* 59 */
-  II(b, c, d, a, in[13], S44, UL(1309151649)); /* 60 */
-  II(a, b, c, d, in[4], S41, UL(4149444226));  /* 61 */
-  II(d, a, b, c, in[11], S42, UL(3174756917)); /* 62 */
-  II(c, d, a, b, in[2], S43, UL(718787259));   /* 63 */
-  II(b, c, d, a, in[9], S44, UL(3951481745));  /* 64 */
+    uint32_t temp = DD;
+    DD = CC;
+    CC = BB;
+    BB = BB + rotateLeft(AA + E + K[i] + input[j], S[i]);
+    AA = temp;
+  }
 
-  buf[0] += a;
-  buf[1] += b;
-  buf[2] += c;
-  buf[3] += d;
+  buffer[0] += AA;
+  buffer[1] += BB;
+  buffer[2] += CC;
+  buffer[3] += DD;
+}
+
+/*
+ * Functions that run the algorithm on the provided input and put the digest into result.
+ * result should be able to store 16 bytes.
+ */
+void md5String(char *input, uint8_t *result)
+{
+  MD5Context ctx;
+  md5Init(&ctx);
+  md5Update(&ctx, (uint8_t *)input, strlen(input));
+  md5Finalize(&ctx);
+
+  memcpy(result, ctx.digest, 16);
+}
+
+void md5File(FILE *file, uint8_t *result)
+{
+  char *input_buffer = malloc(1024);
+  size_t input_size = 0;
+
+  MD5Context ctx;
+  md5Init(&ctx);
+
+  while ((input_size = fread(input_buffer, 1, 1024, file)) > 0)
+  {
+    md5Update(&ctx, (uint8_t *)input_buffer, input_size);
+  }
+
+  md5Finalize(&ctx);
+
+  free(input_buffer);
+
+  memcpy(result, ctx.digest, 16);
 }
